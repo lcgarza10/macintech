@@ -24,8 +24,8 @@ export function Footer() {
               Macintech<span className="text-[#00C853]">.</span>
             </h3>
             <p className="text-gray-400 max-w-md">
-              Consultoría especializada en arquitectura cloud, bases de datos y desarrollo de aplicaciones. 
-              Tu socio tecnológico para soluciones escalables y seguras.
+              Empresa SaaS B2B especializada en consultoría cloud, desarrollo de aplicaciones e integración de IA. 
+              Soluciones empresariales escalables y seguras.
             </p>
             <div className="pt-4">
               <a 

@@ -68,7 +68,8 @@ export function HeroSection() {
                   <span className="block text-blue-400">Integral</span>
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-300 max-w-2xl leading-relaxed">
-                  Consultoría especializada en arquitectura de software, bases de datos en la nube y desarrollo de aplicaciones de clase mundial. 
+                  Empresa SaaS especializada en soluciones B2B: consultoría cloud, desarrollo de aplicaciones empresariales 
+                  e integración de inteligencia artificial. 
                   <span className="text-[#00C853]"> Tu socio tecnológico de confianza.</span>
                 </p>
               </div>
