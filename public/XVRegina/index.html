@@ -546,18 +546,31 @@
             background: rgba(255, 255, 255, 0.9);
         }
 
-        .rsvp-section .radio-group {
+        .attend-toggle {
             display: flex;
-            gap: 20px;
+            gap: 10px;
             margin-top: 8px;
         }
 
-        .rsvp-section .radio-group label {
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            color: #2a4a5f;
+        .attend-btn {
+            flex: 1;
+            padding: 14px;
+            border: 2px solid #b0c8d8;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            font-family: 'Aboreto';
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: #5a7a8f;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .attend-btn.active {
+            background: #6bb8d4;
+            color: #fff;
+            border-color: #6bb8d4;
+            font-weight: bold;
         }
 
         .btn-enviar {
@@ -785,9 +798,10 @@
                 class="btn-location">U B I C A C I Ó N</a>
         </div>
 
-        <!-- 8. GIFT SECTION (clean white) -->
-        <div class="gift-section">
-            <p><em>Tu compañía es lo más importante para mi, pero si deseas darme un obsequio, esta es mi
+        <!-- 8. GIFT SECTION (same bg as confirm) -->
+        <div class="confirm-section">
+            <p style="font-style: italic; font-size: 1.15rem; color: #3a5a6f; line-height: 1.9;"><em>Tu compañía es lo
+                    más importante para mi, pero si deseas darme un obsequio, esta es mi
                     sugerencia</em></p>
             <img class="envelope-icon"
                 src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2024/02/logo-SOBRE.png" alt="Sobre">
@@ -846,7 +860,7 @@
         <!-- 12. THANK YOU + CONFIRM -->
         <div class="confirm-section">
             <p class="thanks-text">Te agradecemos confirmar</p>
-            <div class="confirm-box">CONFIRMAR ASISTENCIA ANTES DEL<br>15 DE MARZO 2026</div>
+            <div class="confirm-box">CONFIRMAR ASISTENCIA ANTES DEL<br>06 DE MARZO 2026</div>
         </div>
 
         <!-- 13. RSVP FORM (clean celeste) -->
@@ -856,19 +870,18 @@
                 alt="estrellas">
 
             <div class="form-group">
-                <label>NOMBRE</label>
-                <input type="text" id="form-name" readonly>
-            </div>
-            <div class="form-group">
-                <label>TELÉFONO</label>
+                <label>TELÉFONO ( OPCIONAL )</label>
                 <input type="tel" id="form-phone" placeholder="">
             </div>
             <div class="form-group">
                 <label>ASISTIRÉ</label>
-                <div class="radio-group">
-                    <label><input type="radio" name="attend" value="SÍ" checked> SÍ</label>
-                    <label><input type="radio" name="attend" value="NO"> NO</label>
+                <div class="attend-toggle">
+                    <button type="button" class="attend-btn active" data-value="SÍ" onclick="selectAttend(this)">SÍ
+                        ASISTIRÉ</button>
+                    <button type="button" class="attend-btn" data-value="NO" onclick="selectAttend(this)">NO
+                        ASISTIRÉ</button>
                 </div>
+                <input type="hidden" name="attend" id="attend-value" value="SÍ">
             </div>
             <div class="form-group">
                 <label>MENSAJE ( OPCIONAL )</label>
@@ -950,22 +963,26 @@
                     document.getElementById('guest-display').textContent = g.name;
                     const asistencia = g.total === 1 ? 'Se confirmó 1 asistencia' : `Se confirmó ${g.total} asistencias`;
                     document.getElementById('pases-display').textContent = asistencia;
-                    document.getElementById('form-name').value = g.name;
                 }
             } else {
                 document.getElementById('guest-display').textContent = 'FAMILIA Y AMIGOS';
                 document.getElementById('pases-display').textContent = '';
-                document.getElementById('form-name').value = 'INVITADO';
             }
         }
 
+        function selectAttend(btn) {
+            document.querySelectorAll('.attend-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('attend-value').value = btn.dataset.value;
+        }
+
         function enviarConfirmacion() {
-            const name = document.getElementById('form-name').value;
+            const name = document.getElementById('guest-display').textContent;
             const phone = document.getElementById('form-phone').value;
-            const att = document.querySelector('input[name="attend"]:checked').value;
+            const att = document.getElementById('attend-value').value;
             const msg = document.getElementById('form-msg').value;
             const pases = document.getElementById('pases-display').textContent;
-            const txt = `Hola! Soy ${name}. ${att === 'SÍ' ? 'Confirmo mi asistencia' : 'No podré asistir'} a los XV de Regina. Pase: ${pases}. Tel: ${phone}. ${msg}`;
+            const txt = `Hola! Soy ${name}. ${att === 'SÍ' ? 'Confirmo mi asistencia' : 'No podré asistir'} a los XV de Regina. ${pases}. Tel: ${phone}. ${msg}`;
             window.open(`https://wa.me/528182064610?text=${encodeURIComponent(txt)}`, '_blank');
         }
 
