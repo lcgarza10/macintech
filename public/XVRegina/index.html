@@ -324,26 +324,65 @@
             background: rgba(255, 255, 255, 0.5);
         }
 
-        /* ===== SILVER SECTION (gift, rsvp) ===== */
-        .silver-section {
-            background: url('https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2025/09/fondo-de-textura-de-papel-metalico-plateado-1.jpg') center/cover;
+        /* ===== GIFT SECTION (clean white) ===== */
+        .gift-section {
+            background: #f8f6f2;
+            padding: 60px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gift-section::before,
+        .gift-section::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(195, 170, 120, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .gift-section::before {
+            top: -30px;
+            left: -30px;
+        }
+
+        .gift-section::after {
+            bottom: -30px;
+            right: -30px;
+        }
+
+        .gift-section p {
+            font-style: italic;
+            font-size: 1.15rem;
+            color: #3a3a3a;
+            line-height: 1.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== QR/ALBUM SECTION (celeste) ===== */
+        .qr-section {
+            background: linear-gradient(135deg, #8cb8d4 0%, #a0c8e0 50%, #8cb8d4 100%);
             padding: 50px 25px;
             text-align: center;
         }
 
-        .silver-section p {
+        .qr-section p {
             font-style: italic;
-            font-size: 1.2rem;
-            color: #000;
+            font-size: 1.15rem;
+            color: #fff;
             line-height: 1.8;
-            font-weight: bold;
-            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
         }
 
         .envelope-icon {
-            max-width: 120px;
+            max-width: 100px;
             margin: 25px auto;
             display: block;
+            position: relative;
+            z-index: 1;
         }
 
         .stars-divider {
@@ -746,15 +785,16 @@
                 class="btn-location">U B I C A C I Ó N</a>
         </div>
 
-        <!-- 8. GIFT SECTION (silver) -->
-        <div class="silver-section">
+        <!-- 8. GIFT SECTION (clean white) -->
+        <div class="gift-section">
             <p><em>Tu compañía es lo más importante para mi, pero si deseas darme un obsequio, esta es mi
                     sugerencia</em></p>
             <img class="envelope-icon"
                 src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2024/02/logo-SOBRE.png" alt="Sobre">
-            <img class="stars-divider"
-                src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2025/09/estrellas-7177-LARISSA.png"
-                alt="estrellas">
+        </div>
+
+        <!-- 8b. QR/ALBUM SECTION (celeste) -->
+        <div class="qr-section">
             <p>Comparte las fotos y videos de mi XV años</p>
             <img class="qr-code"
                 src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-24-at-9.50.43-AM.jpeg"
