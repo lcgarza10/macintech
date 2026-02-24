@@ -208,7 +208,7 @@
 
         /* ===== CELESTE SECTION (prayer, parents) ===== */
         .celeste-section {
-            background: linear-gradient(to bottom, #e1f0f8, #d0e8f4, #e1f0f8);
+            background: linear-gradient(135deg, #a8d8f0 0%, #c5e6f5 30%, #a8d8f0 60%, #b8dff2 100%);
             padding: 50px 30px;
             text-align: center;
         }
@@ -234,16 +234,45 @@
             margin: 3px 0;
         }
 
-        /* Scroll reveal animation */
+        /* Scroll reveal animation - TEXT ONLY, no background movement */
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(20px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Don't move entire section containers, only inner elements */
+        div.reveal {
+            transform: none;
+            opacity: 1;
+        }
+
+        div.reveal>* {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        div.reveal.visible>* {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        div.reveal.visible>*:nth-child(2) {
+            transition-delay: 0.15s;
+        }
+
+        div.reveal.visible>*:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        div.reveal.visible>*:nth-child(4) {
+            transition-delay: 0.4s;
         }
 
         /* ===== FULL WIDTH PHOTO ===== */
@@ -305,9 +334,9 @@
         .silver-section p {
             font-style: italic;
             font-size: 1.15rem;
-            color: #1a2a3a;
+            color: #111;
             line-height: 1.8;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
         }
 
         .envelope-icon {
@@ -376,23 +405,27 @@
 
         .silver-section label {
             font-family: 'Aboreto';
-            font-size: 0.8rem;
-            color: #1a2a3a;
+            font-size: 0.85rem;
+            color: #fff;
             letter-spacing: 2px;
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.35);
+            padding: 4px 10px;
+            border-radius: 4px;
+            display: inline-block;
         }
 
         .silver-section input,
         .silver-section select {
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             border: none;
-            border-radius: 0;
+            border-radius: 4px;
             font-size: 1rem;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.85);
         }
 
         .silver-section .radio-group {
@@ -406,8 +439,11 @@
             display: flex;
             align-items: center;
             gap: 5px;
-            color: #1a2a3a;
+            color: #fff;
             font-weight: bold;
+            background: rgba(0, 0, 0, 0.35);
+            padding: 6px 12px;
+            border-radius: 4px;
         }
 
         .btn-enviar {
@@ -425,11 +461,11 @@
 
         .adults-note {
             font-style: italic;
-            color: #1a2a3a;
+            color: #111;
             margin-top: 30px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             line-height: 1.8;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
         }
 
         .adults-note strong {
@@ -446,19 +482,25 @@
 
         .footer-brand {
             background: linear-gradient(135deg, #7bc4e8, #a8d8f0);
-            padding: 50px 20px;
+            padding: 60px 20px;
             text-align: center;
         }
 
         .footer-brand img {
-            max-width: 65%;
+            max-width: 70%;
+        }
+
+        .footer-brand .footer-date {
+            max-width: 50%;
+            margin-top: 15px;
         }
 
         .footer-brand .credit {
-            font-size: 0.6rem;
-            color: rgba(255, 255, 255, 0.5);
-            letter-spacing: 3px;
-            margin-top: 15px;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 4px;
+            margin-top: 20px;
+            font-family: 'Aboreto';
         }
 
         /* ===== PASES (our addition) ===== */
@@ -730,8 +772,9 @@
             <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/nombre-8176-regina.png"
                 alt="REGINA">
             <br>
-            <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/fecha-8176-regina.png"
-                alt="27.03.26" style="max-width:40%; margin-top:10px;">
+            <img class="footer-date"
+                src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/fecha-8176-regina.png"
+                alt="27.03.26">
             <p class="credit">ANGEL FOTO INVITACIONES</p>
         </div>
 
