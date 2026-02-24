@@ -142,17 +142,21 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
+            padding-top: 25px;
         }
 
         .hero .overlay img.name-img {
-            max-width: 70%;
+            max-width: 90%;
             margin-bottom: 0;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
         }
 
         .hero .overlay img.date-img {
-            max-width: 55%;
-            margin-top: 10px;
+            max-width: 65%;
+            margin-top: auto;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
         }
 
         /* ===== "SOLO FALTAN" IMAGE ===== */
@@ -164,7 +168,7 @@
         }
 
         .solo-faltan-img img {
-            max-width: 55%;
+            max-width: 65%;
         }
 
         /* ===== COUNTDOWN ===== */
@@ -182,11 +186,11 @@
 
         .t-block {
             text-align: center;
-            min-width: 60px;
+            min-width: 70px;
         }
 
         .t-num {
-            font-size: 2.5rem;
+            font-size: 3.2rem;
             font-weight: bold;
             color: #415c75;
             font-family: 'Rosarivo';
@@ -194,11 +198,12 @@
         }
 
         .t-label {
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #8aa;
-            margin-top: 5px;
+            letter-spacing: 3px;
+            color: #6a8a9a;
+            margin-top: 8px;
+            font-family: 'Aboreto';
         }
 
         /* ===== CELESTE SECTION (prayer, parents) ===== */
@@ -210,23 +215,35 @@
 
         .prayer-text {
             font-style: italic;
-            font-size: 1.05rem;
+            font-size: 1.25rem;
             color: #5a7a8f;
-            line-height: 2;
+            line-height: 2.1;
         }
 
         .parents-label {
             font-style: italic;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #5a7a8f;
             margin: 40px 0 15px;
         }
 
         .parent-name {
             font-style: italic;
-            font-size: 1.15rem;
+            font-size: 1.25rem;
             color: #5a7a8f;
             margin: 3px 0;
+        }
+
+        /* Scroll reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* ===== FULL WIDTH PHOTO ===== */
@@ -243,20 +260,20 @@
         }
 
         .blue-section img.section-icon {
-            max-width: 55%;
+            max-width: 60%;
             margin-bottom: 15px;
         }
 
         .blue-section img.section-title {
-            max-width: 70%;
+            max-width: 80%;
             margin-bottom: 20px;
         }
 
         .blue-section p {
             font-style: italic;
-            font-size: 1.1rem;
-            color: #3a5a6f;
-            margin: 5px 0;
+            font-size: 1.3rem;
+            color: #2a4a5f;
+            margin: 8px 0;
         }
 
         .btn-location {
@@ -287,9 +304,10 @@
 
         .silver-section p {
             font-style: italic;
-            font-size: 1rem;
-            color: #4a5a6a;
+            font-size: 1.15rem;
+            color: #1a2a3a;
             line-height: 1.8;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
         }
 
         .envelope-icon {
@@ -305,23 +323,25 @@
         }
 
         .qr-code {
-            max-width: 200px;
-            margin: 15px auto;
+            max-width: 250px;
+            margin: 20px auto;
             display: block;
+            border-radius: 8px;
         }
 
         .btn-album {
             display: inline-block;
             margin-top: 15px;
-            padding: 12px 30px;
-            border: 1.5px solid #5a7a8f;
+            padding: 14px 35px;
+            border: 2px solid #3a5a6f;
             border-radius: 50px;
-            color: #3a5a6f;
+            color: #1a2a3a;
             font-family: 'Aboreto';
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             letter-spacing: 3px;
             text-decoration: none;
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.7);
+            font-weight: bold;
         }
 
         /* ===== SLIDESHOW ===== */
@@ -356,11 +376,13 @@
 
         .silver-section label {
             font-family: 'Aboreto';
-            font-size: 0.7rem;
-            color: #555;
+            font-size: 0.8rem;
+            color: #1a2a3a;
             letter-spacing: 2px;
             display: block;
             margin-bottom: 5px;
+            font-weight: bold;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
         }
 
         .silver-section input,
@@ -380,10 +402,12 @@
         }
 
         .silver-section .radio-group label {
-            font-size: 0.9rem;
+            font-size: 1rem;
             display: flex;
             align-items: center;
             gap: 5px;
+            color: #1a2a3a;
+            font-weight: bold;
         }
 
         .btn-enviar {
@@ -401,10 +425,11 @@
 
         .adults-note {
             font-style: italic;
-            color: #4a5a6a;
+            color: #1a2a3a;
             margin-top: 30px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             line-height: 1.8;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
         }
 
         .adults-note strong {
@@ -465,7 +490,7 @@
 
         @media (max-width: 400px) {
             .t-num {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
         }
     </style>
@@ -539,7 +564,7 @@
 
         <!-- 3. PRAYER -->
         <div class="celeste-section">
-            <p class="prayer-text">
+            <p class="prayer-text reveal">
                 Gracias señor por permitirme<br>
                 llegar a este día tan especial en<br>
                 mi vida.<br><br>
@@ -557,11 +582,16 @@
                 de mi vida.
             </p>
 
+            <!-- Stars before parents -->
+            <img class="stars-divider reveal"
+                src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2025/09/estrellas-7177-LARISSA.png"
+                alt="estrellas" style="max-width:50%; margin: 30px auto 10px;">
+
             <!-- 4. PARENTS -->
-            <p class="parents-label">Mis Padres</p>
-            <p class="parent-name">Iris Nancy Rodriguez</p>
-            <p class="parent-name" style="font-size:0.9rem; margin: 8px 0;">y</p>
-            <p class="parent-name">Luis Carlos Garza</p>
+            <p class="parents-label reveal">Mis Padres</p>
+            <p class="parent-name reveal">Iris Nancy Rodriguez</p>
+            <p class="parent-name reveal" style="font-size:0.9rem; margin: 8px 0;">y</p>
+            <p class="parent-name reveal">Luis Carlos Garza</p>
         </div>
 
         <!-- 5. HORSE PHOTO -->
@@ -570,7 +600,7 @@
             alt="Regina">
 
         <!-- 6. CHURCH (blue starry section) -->
-        <div class="blue-section">
+        <div class="blue-section reveal">
             <img class="section-icon"
                 src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/iglesia-8176-regina-1.png"
                 alt="Iglesia">
@@ -584,7 +614,7 @@
         </div>
 
         <!-- 7. RECEPTION (blue starry section) -->
-        <div class="blue-section">
+        <div class="blue-section reveal">
             <img class="section-icon"
                 src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/recep-8176-regina-1-1.png"
                 alt="Copas">
@@ -617,17 +647,17 @@
         </div>
 
         <!-- 9. DRESS CODE (blue section) -->
-        <div class="blue-section">
+        <div class="blue-section reveal">
             <img class="section-icon"
                 src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/vestIcon-8176-regina.png"
                 alt="Vestimenta">
             <img class="section-title"
                 src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/vest-8176-regina-2.png"
                 alt="CODIGO DE VESTIMENTA">
-            <p>Formal</p>
+            <p style="font-size: 1.5rem;">Formal</p>
             <hr style="border:none; border-top:1px solid rgba(0,0,0,0.15); margin: 20px 0;">
-            <p>Colores reservados para la quinceañera</p>
-            <p style="font-size: 1.3rem; font-weight: bold; margin-top: 5px;">Celeste</p>
+            <p style="font-size: 1.3rem;">Colores reservados para la quinceañera</p>
+            <p style="font-size: 1.6rem; font-weight: bold; margin-top: 8px;">Celeste</p>
         </div>
 
         <!-- 10. SLIDESHOW -->
@@ -779,6 +809,17 @@
         }
 
         window.onload = init;
+
+        // Scroll reveal animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
 
