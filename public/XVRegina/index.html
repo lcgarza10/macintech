@@ -42,19 +42,99 @@
             align-items: center;
         }
 
+        /* Cover Page */
+        #cover-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2000;
+            background-image: url('https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/1-PORTADA-08-01-26-_8176-IRIS-NANCY-RDZ-4745.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: transform 1s ease-in-out, opacity 0.8s ease-in-out;
+            padding: 20px;
+        }
+
+        #cover-page.hidden {
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .cover-content {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 40px 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            max-width: 90%;
+            width: 400px;
+        }
+
+        .cover-name {
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 0 15px rgba(0, 150, 255, 0.6));
+        }
+
+        .cover-date {
+            width: 80%;
+            max-width: 200px;
+            margin-bottom: 30px;
+        }
+
+        .btn-open {
+            background: var(--accent-blue);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-family: 'Aboreto', sans-serif;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            letter-spacing: 3px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, background 0.3s;
+            animation: pulse-animation 2s infinite;
+        }
+
+        @keyframes pulse-animation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .btn-open:hover {
+            background: #2a6a80;
+        }
+
+        /* Main Container */
         .main-container {
             width: 100%;
             max-width: 500px;
             background: white;
             box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
             position: relative;
+            display: none; /* Hidden until cover is opened */
+        }
+
+        .main-container.visible {
+            display: block;
         }
 
         /* Hero Section */
         .section-hero {
             width: 100%;
             height: auto;
-            min-height: 100vh;
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -63,17 +143,82 @@
             background-position: center;
             padding: 60px 20px;
             text-align: center;
+            position: relative;
+        }
+
+        .section-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(2px);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
         }
 
         .title-img {
-            max-width: 90%;
+            max-width: 100%;
+            width: 400px; /* Bigger name */
             margin-top: 20px;
-            filter: drop-shadow(0 0 10px rgba(0, 150, 255, 0.5));
+            filter: drop-shadow(0 0 15px rgba(0, 150, 255, 0.8));
         }
 
         .date-img {
-            max-width: 70%;
+            max-width: 80%;
             margin-top: 20px;
+            background: rgba(255, 255, 255, 0.4); /* Better visibility */
+            padding: 10px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Countdown */
+        .countdown-container {
+            padding: 30px 20px;
+            background: white;
+            text-align: center;
+        }
+
+        .countdown-title {
+            font-family: 'Aboreto', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            color: var(--accent-blue);
+            margin-bottom: 20px;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .time-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 60px;
+        }
+
+        .time-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent-blue);
+            line-height: 1;
+        }
+
+        .time-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-top: 5px;
         }
 
         /* Content Sections */
@@ -104,9 +249,9 @@
 
         .prayer {
             font-style: italic;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             margin: 20px 0;
-            color: #555;
+            color: #444;
             font-family: 'Arizonia', cursive;
         }
 
@@ -219,12 +364,12 @@
             position: fixed;
             bottom: 25px;
             right: 25px;
-            z-index: 1000;
+            z-index: 3000;
             background: white;
             width: 55px;
             height: 55px;
             border-radius: 50%;
-            display: flex;
+            display: none; /* Hidden until open */
             justify-content: center;
             align-items: center;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
@@ -249,11 +394,27 @@
             .main-container {
                 box-shadow: none;
             }
+            .time-number {
+                font-size: 1.5rem;
+            }
+            .time-block {
+                min-width: 50px;
+            }
         }
     </style>
 </head>
 
 <body>
+
+    <!-- COVER PAGE -->
+    <div id="cover-page">
+        <div class="cover-content">
+            <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/nombre-8176-regina.png" alt="XV REGINA" class="cover-name">
+            <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/fecha-8176-regina.png" alt="27 Marzo 2026" class="cover-date">
+            <p style="font-family: 'Aboreto', sans-serif; font-size: 0.8rem; letter-spacing: 5px; margin-bottom: 20px; color: #555;">P A S E  P E R S O N A L</p>
+            <button class="btn-open" onclick="openInvitation()">VER INVITACIÓN</button>
+        </div>
+    </div>
 
     <div class="audio-btn" id="audioToggle">🎵</div>
     <audio id="bgMusic" loop>
@@ -262,13 +423,38 @@
             type="audio/mpeg">
     </audio>
 
-    <div class="main-container">
+    <div class="main-container" id="invitationContent">
         <!-- HERO -->
         <section class="section-hero">
-            <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/nombre-8176-regina.png"
-                alt="XV REGINA" class="title-img">
-            <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/fecha-8176-regina.png"
-                alt="27 Marzo 2026" class="date-img">
+            <div class="hero-content">
+                <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/nombre-8176-regina.png"
+                    alt="XV REGINA" class="title-img">
+                <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/fecha-8176-regina.png"
+                    alt="27 Marzo 2026" class="date-img">
+            </div>
+        </section>
+
+        <!-- COUNTDOWN -->
+        <section class="countdown-container">
+            <div class="countdown-title">SOLO FALTAN</div>
+            <div class="timer">
+                <div class="time-block">
+                    <span class="time-number" id="days">00</span>
+                    <span class="time-label">Días</span>
+                </div>
+                <div class="time-block">
+                    <span class="time-number" id="hours">00</span>
+                    <span class="time-label">Horas</span>
+                </div>
+                <div class="time-block">
+                    <span class="time-number" id="minutes">00</span>
+                    <span class="time-label">Min</span>
+                </div>
+                <div class="time-block">
+                    <span class="time-number" id="seconds">00</span>
+                    <span class="time-label">Seg</span>
+                </div>
+            </div>
         </section>
 
         <!-- PRAYER -->
@@ -348,18 +534,51 @@
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        // Database of guests (Embedded or could be fetched)
-        // This is populated by process_excel.py
-        const GUESTS_DATA = []; // Will be injected via script or fetch
+        // Target Date: March 27, 2026, 18:00
+        const targetDate = new Date('March 27, 2026 18:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = d < 10 ? '0' + d : d;
+            document.getElementById('hours').innerText = h < 10 ? '0' + h : h;
+            document.getElementById('minutes').innerText = m < 10 ? '0' + m : m;
+            document.getElementById('seconds').innerText = s < 10 ? '0' + s : s;
+
+            if (difference < 0) {
+                clearInterval(countdownInterval);
+                document.querySelector('.countdown-container').style.display = 'none';
+            }
+        }
+
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        function openInvitation() {
+            document.getElementById('cover-page').classList.add('hidden');
+            document.getElementById('invitationContent').classList.add('visible');
+            document.getElementById('audioToggle').style.display = 'flex';
+            
+            // Try to play music automatically
+            const audio = document.getElementById('bgMusic');
+            audio.play().catch(e => console.log("Auto-play prevented"));
+            playing = true;
+            document.getElementById('audioToggle').innerText = "🎵";
+        }
 
         async function init() {
-            // Load guests from invitados.json if available, else use embedded (simplified for local testing)
             let invitados = [];
             try {
                 const response = await fetch('invitados.json');
                 invitados = await response.json();
             } catch (e) {
-                console.log("Using embedded data (if any)");
+                console.log("Error loading guests");
             }
 
             const urlParams = new URLSearchParams(window.location.search);
@@ -392,11 +611,10 @@
             }
 
             const msg = `Hola! Soy ${name}. Confirmo mi asistencia para los XV de Regina (${att}). Mi pase es: ${pases}. Contacto: ${phone}`;
-            const waUrl = `https://wa.me/528182064610?text=${encodeURIComponent(msg)}`; // Reemplazar con el número del anfitrión
+            const waUrl = `https://wa.me/528182064610?text=${encodeURIComponent(msg)}`; 
             window.open(waUrl, '_blank');
         }
 
-        // Music Control
         const audio = document.getElementById('bgMusic');
         const toggle = document.getElementById('audioToggle');
         let playing = false;
