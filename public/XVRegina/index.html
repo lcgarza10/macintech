@@ -6,25 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <title>XV REGINA - Invitación Especial</title>
-
-    <!-- Fonts from Google Fonts -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Aboreto&family=Rosarivo:ital@0;1&family=Arizonia&display=swap">
-
     <style>
-        :root {
-            --primary-bg: #0d1b2a;
-            --secondary-bg: #ffffff;
-            --accent-blue: #415c75;
-            --light-blue-celeste: #b3e5fc;
-            --text-main: #415c75;
-            --text-heading: #1a5163;
-            --silver-texture: url('https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2025/09/fondo-de-textura-de-papel-metalico-plateado-1.jpg');
-            --celestial-bg: url('https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/2-FONDO-22-01-26-_8176-IRIS-NANCY-RDZ-6461.png');
-            --cover-bg: url('https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/1-PORTADA-08-01-26-_8176-IRIS-NANCY-RDZ-4745.png');
-            --stars-overlay: url('https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2025/09/estrellas-7177-LARISSA.png');
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -33,19 +17,14 @@
 
         body {
             font-family: 'Rosarivo', serif;
-            color: var(--text-main);
-            background-color: var(--primary-bg);
-            background-image: var(--celestial-bg);
-            background-size: cover;
-            background-attachment: fixed;
-            overflow-x: hidden;
-            line-height: 1.6;
+            color: #415c75;
+            background: #fff;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* Cover Page */
+        /* ===== COVER PAGE ===== */
         #cover-page {
             position: fixed;
             top: 0;
@@ -53,29 +32,12 @@
             width: 100%;
             height: 100%;
             z-index: 2000;
-            background-image: var(--cover-bg);
-            background-size: cover;
-            background-position: center;
+            background: url('https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/1-PORTADA-08-01-26-_8176-IRIS-NANCY-RDZ-4745.png') center/cover no-repeat;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            transition: transform 1s ease-in-out, opacity 0.8s ease-in-out;
-            padding: 20px;
-        }
-
-        #cover-page::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: var(--stars-overlay);
-            background-repeat: repeat;
-            opacity: 0.6;
-            pointer-events: none;
+            transition: transform 1s ease, opacity 0.8s ease;
         }
 
         #cover-page.hidden {
@@ -85,23 +47,19 @@
         }
 
         .cover-content {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(15px);
-            padding: 50px 30px;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 40px 25px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
             max-width: 90%;
-            width: 420px;
-            position: relative;
-            z-index: 10;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            width: 400px;
         }
 
         .cover-name {
             width: 100%;
             max-width: 300px;
             margin-bottom: 10px;
-            filter: drop-shadow(0 0 15px rgba(0, 150, 255, 0.6));
         }
 
         .cover-date {
@@ -111,380 +69,44 @@
         }
 
         .btn-open {
-            background: var(--accent-blue);
-            color: white;
+            background: rgba(255, 255, 255, 0.9);
+            color: #415c75;
             border: none;
             padding: 15px 40px;
             font-family: 'Aboreto', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1rem;
             border-radius: 50px;
             cursor: pointer;
             letter-spacing: 3px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s, background 0.3s;
-            animation: pulse-animation 2s infinite;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            animation: pulse 2s infinite;
         }
 
-        @keyframes pulse-animation {
-            0% {
+        @keyframes pulse {
+
+            0%,
+            100% {
                 transform: scale(1);
             }
 
             50% {
                 transform: scale(1.05);
             }
-
-            100% {
-                transform: scale(1);
-            }
         }
 
-        .btn-open:hover {
-            background: #2a6a80;
-        }
-
-        /* Main Container */
+        /* ===== MAIN CONTAINER ===== */
         .main-container {
             width: 100%;
             max-width: 500px;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 0 60px rgba(0, 0, 0, 0.4);
-            position: relative;
+            background: white;
             display: none;
-            overflow: hidden;
         }
 
         .main-container.visible {
             display: block;
         }
 
-        .frame-starry {
-            background-color: #e1f5fe;
-            background-image: var(--stars-overlay);
-            background-size: contain;
-            position: relative;
-            color: var(--accent-blue);
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .frame-starry p,
-        .frame-starry h2,
-        .frame-starry h3 {
-            color: var(--accent-blue) !important;
-            text-shadow: none;
-        }
-
-        .frame-starry .parent-name {
-            color: var(--accent-blue) !important;
-            text-shadow: none;
-        }
-
-        .frame-starry::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: var(--stars-overlay);
-            opacity: 0.5;
-            pointer-events: none;
-        }
-
-        .frame-starry * {
-            position: relative;
-            z-index: 10;
-        }
-
-        /* Hero Section */
-        .section-hero {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: #fff;
-            padding: 0;
-        }
-
-        .hero-photo {
-            width: 100%;
-            display: block;
-        }
-
-        .hero-date-wrapper {
-            width: 100%;
-            background-color: #e1f5fe;
-            padding: 40px 20px;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-date-wrapper::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: var(--stars-overlay);
-            opacity: 0.4;
-        }
-
-        .glass-date {
-            position: relative;
-            z-index: 10;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 20px 40px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            display: inline-block;
-        }
-
-        .hero-date-img {
-            max-width: 250px;
-            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
-        }
-
-        /* Countdown - Larger */
-        .countdown-container {
-            padding: 50px 20px;
-            background: white;
-            text-align: center;
-        }
-
-        .countdown-title {
-            font-family: 'Aboreto', sans-serif;
-            font-size: 1.2rem;
-            letter-spacing: 6px;
-            color: var(--accent-blue);
-            margin-bottom: 30px;
-        }
-
-        .timer {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .time-block {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 80px;
-        }
-
-        .time-number {
-            font-size: 3.5rem;
-            /* Larger */
-            font-weight: bold;
-            color: var(--accent-blue);
-            line-height: 1;
-            font-family: 'Rosarivo', serif;
-        }
-
-        .time-label {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #777;
-            margin-top: 10px;
-        }
-
-        /* Content Sections */
-        .section {
-            padding: 60px 30px;
-            text-align: center;
-            background: white;
-            position: relative;
-        }
-
-        .section-prayer {
-            background-color: #e1f5fe;
-            /* Beautiful Celeste */
-            border-top: 2px solid #b3e5fc;
-            border-bottom: 2px solid #b3e5fc;
-        }
-
-        .section-silver {
-            background-image: var(--silver-texture);
-            background-size: cover;
-            border-top: 1px solid #ddd;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .section-celestial {
-            background-image: var(--celestial-bg);
-            background-size: cover;
-            background-attachment: fixed;
-            color: white;
-        }
-
-        .section-celestial h2 {
-            color: white !important;
-        }
-
-        .prayer {
-            font-style: italic;
-            font-size: 1.4rem;
-            color: white;
-            font-family: 'Rosarivo', serif;
-            line-height: 1.8;
-            max-width: 95%;
-            margin: 0 auto;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .parents-title {
-            font-family: 'Rosarivo', serif;
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            letter-spacing: 3px;
-        }
-
-        .parent-name {
-            font-size: 1.6rem;
-            font-weight: bold;
-            color: white;
-            letter-spacing: 4px;
-            margin: 5px 0;
-            text-shadow: 0 0 10px rgba(179, 229, 252, 0.4);
-        }
-
-        h2 {
-            font-family: 'Aboreto', sans-serif;
-            color: var(--text-heading);
-            font-size: 1.6rem;
-            margin-bottom: 20px;
-            letter-spacing: 4px;
-        }
-
-        h3 {
-            font-family: 'Aboreto', sans-serif;
-            color: #666;
-            font-size: 0.9rem;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-        }
-
-        .info-card {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 35px 25px;
-            border-radius: 15px;
-            margin: 30px 0;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        /* Pases Card */
-        .carousel-container {
-            width: 100%;
-            height: 500px;
-            position: relative;
-            overflow: hidden;
-            background: #000;
-        }
-
-        .carousel-slide {
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            position: absolute;
-            transition: opacity 1s ease-in-out;
-            opacity: 0;
-        }
-
-        .carousel-slide.active {
-            opacity: 1;
-        }
-
-        .guest-name {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #333;
-            margin: 10px 0;
-            text-transform: uppercase;
-        }
-
-        .pases-badge {
-            display: inline-block;
-            background: var(--accent-blue);
-            color: white;
-            padding: 10px 30px;
-            border-radius: 50px;
-            font-family: 'Aboreto', sans-serif;
-            font-weight: bold;
-            margin-top: 15px;
-            letter-spacing: 2px;
-        }
-
-        /* Form & Buttons */
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        label {
-            font-family: 'Aboreto', sans-serif;
-            font-size: 0.75rem;
-            color: #666;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        input,
-        select {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
-
-        .btn-action {
-            background: var(--accent-blue);
-            color: white;
-            border: none;
-            width: 100%;
-            padding: 20px;
-            font-family: 'Aboreto', sans-serif;
-            font-size: 1rem;
-            border-radius: 50px;
-            cursor: pointer;
-            letter-spacing: 2px;
-            transition: all 0.3s;
-            margin-top: 10px;
-            box-shadow: 0 5px 15px rgba(26, 81, 99, 0.3);
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-action:hover {
-            background: #21667d;
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background: white;
-            color: var(--accent-blue);
-            border: 2px solid var(--accent-blue);
-            padding: 15px 30px;
-            font-family: 'Aboreto', sans-serif;
-            font-size: 0.9rem;
-            border-radius: 50px;
-            cursor: pointer;
-            letter-spacing: 2px;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 15px;
-        }
-
-        /* Audio Control */
+        /* ===== AUDIO BUTTON ===== */
         .audio-btn {
             position: fixed;
             bottom: 25px;
@@ -497,39 +119,331 @@
             display: none;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             font-size: 1.5rem;
             cursor: pointer;
         }
 
-        /* Footer */
-        .footer-banner {
-            background-image: var(--celestial-bg);
-            background-size: cover;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .footer-image {
+        /* ===== HERO (Photo + Name/Date below) ===== */
+        .hero-photo {
             width: 100%;
             display: block;
         }
 
-        .icon-img {
-            width: 60px;
+        .hero-name-section {
+            background: url('https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/2-FONDO-22-01-26-_8176-IRIS-NANCY-RDZ-6461.png') center/cover no-repeat;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-name-section img {
+            max-width: 80%;
+            margin-bottom: 10px;
+        }
+
+        .hero-date-section {
+            background: url('https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/2-FONDO-22-01-26-_8176-IRIS-NANCY-RDZ-6461.png') center/cover no-repeat;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .hero-date-section img {
+            max-width: 60%;
+        }
+
+        /* ===== COUNTDOWN ===== */
+        .countdown-section {
+            padding: 40px 20px;
+            background: white;
+            text-align: center;
+        }
+
+        .countdown-title {
+            font-family: 'Aboreto', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 5px;
+            color: #415c75;
+            margin-bottom: 25px;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .time-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 70px;
+        }
+
+        .time-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #415c75;
+            line-height: 1;
+            font-family: 'Rosarivo', serif;
+        }
+
+        .time-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #999;
+            margin-top: 8px;
+        }
+
+        /* ===== PRAYER ===== */
+        .prayer-section {
+            padding: 50px 30px;
+            text-align: center;
+            background: white;
+        }
+
+        .prayer-text {
+            font-style: italic;
+            font-size: 1.15rem;
+            color: #415c75;
+            font-family: 'Rosarivo', serif;
+            line-height: 1.9;
+        }
+
+        /* ===== PARENTS ===== */
+        .parents-section {
+            padding: 40px 30px;
+            text-align: center;
+            background: white;
+        }
+
+        .parents-label {
+            font-family: 'Rosarivo', serif;
+            font-size: 1.1rem;
+            color: #415c75;
+            margin-bottom: 20px;
+        }
+
+        .parent-name {
+            font-size: 1.3rem;
+            color: #415c75;
+            font-family: 'Rosarivo', serif;
+            margin: 3px 0;
+        }
+
+        .parent-y {
+            font-size: 1rem;
+            color: #415c75;
+            font-family: 'Rosarivo', serif;
+            margin: 5px 0;
+        }
+
+        /* ===== PHOTO GALLERY (slideshow between sections) ===== */
+        .gallery-section {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .gallery-section img {
+            width: 100%;
+            display: block;
+            transition: opacity 1s ease;
+        }
+
+        /* ===== GENERIC SECTION ===== */
+        .inv-section {
+            padding: 50px 25px;
+            text-align: center;
+            background: white;
+        }
+
+        .inv-section h2 {
+            font-family: 'Aboreto', sans-serif;
+            font-size: 1.3rem;
+            color: #415c75;
+            letter-spacing: 3px;
             margin-bottom: 15px;
         }
 
-        .qr-placeholder {
+        .inv-section p {
+            color: #415c75;
+            line-height: 1.7;
+        }
+
+        .inv-section .icon-img {
+            width: 55px;
+            margin-bottom: 15px;
+        }
+
+        /* ===== LOCATION BUTTON ===== */
+        .btn-location {
+            display: inline-block;
+            margin-top: 20px;
+            background: #415c75;
+            color: white;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-family: 'Aboreto', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .btn-location:hover {
+            background: #2c4a63;
+        }
+
+        /* ===== PASES (Invitado) ===== */
+        .pases-section {
+            padding: 50px 25px;
+            text-align: center;
+            background: white;
+        }
+
+        .guest-name-display {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #415c75;
+            margin: 10px 0;
+            text-transform: uppercase;
+            font-family: 'Rosarivo', serif;
+        }
+
+        .pases-badge {
+            display: inline-block;
+            background: #415c75;
+            color: white;
+            padding: 10px 35px;
+            border-radius: 50px;
+            font-family: 'Aboreto', sans-serif;
+            font-weight: bold;
+            margin-top: 12px;
+            letter-spacing: 2px;
+            font-size: 1rem;
+        }
+
+        /* ===== RSVP FORM ===== */
+        .rsvp-section {
+            padding: 50px 25px;
+            text-align: center;
+            background: white;
+        }
+
+        .rsvp-section h2 {
+            font-family: 'Aboreto', sans-serif;
+            font-size: 1.3rem;
+            color: #415c75;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-family: 'Aboreto', sans-serif;
+            font-size: 0.7rem;
+            color: #888;
+            display: block;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .btn-confirm {
+            width: 100%;
+            padding: 18px;
+            margin-top: 10px;
+            background: #415c75;
+            color: white;
+            border: none;
+            font-family: 'Aboreto', sans-serif;
+            font-size: 0.9rem;
+            border-radius: 50px;
+            cursor: pointer;
+            letter-spacing: 2px;
+        }
+
+        /* ===== ADULTS NOTE ===== */
+        .adults-note {
+            padding: 30px 25px;
+            text-align: center;
+            background: white;
+            font-size: 0.9rem;
+            color: #415c75;
+            font-style: italic;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer-section {
+            width: 100%;
+            text-align: center;
+            background: white;
+        }
+
+        .footer-section img {
+            width: 100%;
+            display: block;
+        }
+
+        .footer-section .footer-name {
+            padding: 40px 20px;
+            background: url('https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/2-FONDO-22-01-26-_8176-IRIS-NANCY-RDZ-6461.png') center/cover no-repeat;
+            text-align: center;
+        }
+
+        .footer-section .footer-name img {
+            max-width: 60%;
+            width: auto;
+            display: inline;
+        }
+
+        .footer-credit {
+            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 3px;
+            margin-top: 15px;
+        }
+
+        /* ===== DIVIDER IMAGE ===== */
+        .divider-photo {
+            width: 100%;
+            display: block;
+        }
+
+        /* ===== QR SECTION ===== */
+        .qr-img {
             width: 150px;
             height: 150px;
-            margin: 20px auto;
-            background: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #ddd;
-            border-radius: 10px;
+            margin: 15px auto;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 8px;
+        }
+
+        .btn-album {
+            display: inline-block;
+            margin-top: 15px;
+            color: #415c75;
+            font-family: 'Aboreto', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-decoration: none;
+            border-bottom: 1px solid #415c75;
+            padding-bottom: 3px;
         }
 
         @media (max-width: 500px) {
@@ -539,10 +453,6 @@
 
             .time-block {
                 min-width: 60px;
-            }
-
-            .prayer {
-                font-size: 1rem;
             }
         }
     </style>
@@ -554,12 +464,9 @@
     <div id="cover-page">
         <div class="cover-content">
             <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/nombre-8176-regina.png"
-                alt="XV REGINA" class="cover-name">
+                alt="REGINA" class="cover-name">
             <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/fecha-8176-regina.png"
-                alt="27 Marzo 2026" class="cover-date">
-            <p
-                style="font-family: 'Aboreto', sans-serif; font-size: 0.8rem; letter-spacing: 5px; margin-bottom: 20px; color: #555;">
-                P A S E P E R S O N A L</p>
+                alt="27.03.26" class="cover-date">
             <button class="btn-open" onclick="openInvitation()">VER INVITACIÓN</button>
         </div>
     </div>
@@ -572,20 +479,23 @@
     </audio>
 
     <div class="main-container" id="invitationContent">
-        <!-- HERO -->
-        <section class="section-hero">
-            <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/1-PORTADA-08-01-26-_8176-IRIS-NANCY-RDZ-4745.png"
-                alt="Regina" class="hero-photo">
-            <div class="hero-date-wrapper">
-                <div class="glass-date">
-                    <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/fecha-8176-regina.png"
-                        alt="Marzo 27 2026" class="hero-date-img">
-                </div>
-            </div>
-        </section>
+
+        <!-- HERO PHOTO -->
+        <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/1-PORTADA-08-01-26-_8176-IRIS-NANCY-RDZ-4745.png"
+            alt="Regina" class="hero-photo">
+
+        <!-- NAME + DATE (on starry blue background like original) -->
+        <div class="hero-name-section">
+            <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/nombre-8176-regina.png"
+                alt="REGINA">
+        </div>
+        <div class="hero-date-section">
+            <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/fecha-8176-regina.png"
+                alt="27.03.26">
+        </div>
 
         <!-- COUNTDOWN -->
-        <section class="countdown-container">
+        <div class="countdown-section">
             <div class="countdown-title">SOLO FALTAN</div>
             <div class="timer">
                 <div class="time-block">
@@ -605,176 +515,165 @@
                     <span class="time-label">Seg</span>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- PRAYER & PARENTS (STARRY FRAME) -->
-        <section class="frame-starry">
-            <p class="prayer">
-                "Gracias señor por permitirme llegar a este día tan especial en mi vida. Estoy aquí contigo acompañada
-                de mis padres y familiares por medio de los cuales aprendí a conocerte y amarte, llena de ilusiones y
-                alegrías empiezo hoy una nueva etapa en mi vida. Señor solo te pido que me des el arma poderosa del amor
-                para luchar en nombre de todo lo que pueda alejarme de ti y así poder disfrutar de esta hermosa etapa de
-                mi vida."
+        <!-- PRAYER -->
+        <div class="prayer-section">
+            <p class="prayer-text">
+                Gracias señor por permitirme<br>
+                llegar a este día tan especial en<br>
+                mi vida.<br>
+                Estoy aquí contigo acompañada<br>
+                de mis padres y familiares por<br>
+                medio de los cuales aprendí a<br>
+                conocerte y amarte, llena de<br>
+                ilusiones y alegrías empiezo hoy<br>
+                una nueva etapa en mi vida.<br>
+                Señor solo te pido que me des el<br>
+                arma poderosa del amor para<br>
+                luchar en nombre de todo lo que<br>
+                pueda alejarme de ti y así poder<br>
+                disfrutar de esta hermosa etapa<br>
+                de mi vida.
             </p>
+        </div>
 
-            <div style="margin-top: 60px;">
-                <h3 class="parents-title">MIS PADRES</h3>
-                <p class="parent-name">LUIS CARLOS GARZA</p>
-                <p class="parent-name">IRIS NANCY RODRÍGUEZ</p>
-            </div>
-        </section>
+        <!-- PARENTS -->
+        <div class="parents-section">
+            <p class="parents-label">Mis Padres</p>
+            <p class="parent-name">Iris Nancy Rodriguez</p>
+            <p class="parent-y">y</p>
+            <p class="parent-name">Luis Carlos Garza</p>
+        </div>
 
-        <!-- PHOTO INTERMEDIATE (CAROUSEL) -->
-        <div class="carousel-container" id="photoGallery">
-            <!-- Slides will be injected by JS -->
+        <!-- GALLERY PHOTOS (slideshow) -->
+        <div class="gallery-section" id="slideshow">
+            <img id="slideshow-img"
+                src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/3-08-01-26-_8176-IRIS-NANCY-RDZ-4756.png"
+                alt="Regina Gallery">
         </div>
 
         <!-- CHURCH -->
-        <section class="section section-silver">
-            <img src="https://angelfotoinvitaciones.mx/wp-content/uploads/2025/08/iglesia-celeste-scaled.jpg"
-                class="icon-img" alt="Church icon">
-            <h2>CEREMONIA RELIGIOSA</h2>
-            <div class="info-card">
-                <p><strong>PARROQUIA NUESTRA SEÑORA DE GUADALUPE</strong></p>
-                <p>17:30 HORAS</p>
-                <a href="https://maps.app.goo.gl/YyQ5L5m8J8s5h9r47" target="_blank" class="btn-action"
-                    style="background:#4b8fa6; margin-top:20px;">VER UBICACIÓN</a>
-            </div>
-        </section>
+        <div class="inv-section">
+            <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/iglesia-8176-regina-1.png"
+                class="icon-img" alt="Iglesia">
+            <h2>Parroquia Nuestra Señora de Guadalupe</h2>
+            <p>5:30 pm</p>
+            <a href="https://www.google.com/maps/place/Parroquia+Nuestra+Se%C3%B1ora+de+Guadalupe/@25.9605244,-100.2930537,17z/"
+                target="_blank" class="btn-location">U B I C A C I Ó N</a>
+        </div>
 
         <!-- PHOTO BREAK -->
         <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/2-FONDO-22-01-26-_8176-IRIS-NANCY-RDZ-6461.png"
-            style="width:100%;" alt="Regina Photo">
+            class="divider-photo" alt="Regina">
 
         <!-- RECEPTION -->
-        <section class="frame-starry">
+        <div class="inv-section">
             <img src="https://angelfotoinvitaciones.mx/wp-content/uploads/2025/08/copas-celestes-scaled.jpg"
-                class="icon-img" style="filter: brightness(1.5);">
-            <h2 style="color:white; letter-spacing: 6px;">RECEPCIÓN</h2>
-            <div class="info-card">
-                <p style="font-size: 1.4rem; color: var(--accent-blue); font-weight: bold;">LA GALERÍA EVENTOS</p>
-                <p>(SALÓN PICASSO)</p>
-                <p>20:00 HORAS</p>
-                <a href="https://maps.app.goo.gl/Z8m9B5P7Y9C2D4N67" target="_blank" class="btn-action"
-                    style="margin-top:20px;">VER UBICACIÓN</a>
-            </div>
-        </section>
+                class="icon-img" alt="Copas">
+            <h2>La Galería Eventos</h2>
+            <p>(Salón Picasso)</p>
+            <p>8:00 pm</p>
+            <a href="https://www.google.com/maps/place/La+Galeria+Eventos/@25.7805291,-100.2862676,17z/" target="_blank"
+                class="btn-location">U B I C A C I Ó N</a>
+        </div>
+
+        <!-- GIFT SUGGESTION -->
+        <div class="inv-section">
+            <p>Tu compañía es lo más importante para mi, pero si deseas darme un obsequio, esta es mi sugerencia</p>
+        </div>
+
+        <!-- QR / ALBUM -->
+        <div class="inv-section">
+            <p style="margin-bottom: 10px;">Comparte las fotos y videos de mi XV años</p>
+            <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-24-at-9.50.43-AM.jpeg"
+                class="qr-img" alt="QR Album">
+            <br>
+            <a href="https://web.dotstheapp.com/a?group=2379408&dlBy=carlos1245&code=Y9zQhQoronD2" target="_blank"
+                class="btn-album">VER ALBUM</a>
+        </div>
 
         <!-- DRESS CODE -->
-        <section class="section">
+        <div class="inv-section">
             <img src="https://angelfotoinvitaciones.mx/wp-content/uploads/2025/08/vestido-celeste-scaled.jpg"
-                class="icon-img">
-            <h2>CÓDIGO DE VESTIMENTA</h2>
-            <p style="font-size: 1.2rem; font-weight: bold; letter-spacing: 2px;">FORMAL</p>
-            <p style="color: #666; font-size: 0.85rem; margin-top: 10px;">COLORES RESERVADOS PARA LA QUINCEAÑERA:
-                CELESTE</p>
-        </section>
+                class="icon-img" alt="Vestido">
+            <h2>Formal</h2>
+            <p>Colores reservados para la quinceañera</p>
+            <p style="font-weight: bold; font-size: 1.2rem; margin-top: 5px;">Celeste</p>
+        </div>
 
-        <!-- PASES -->
-        <section class="frame-starry">
-            <div class="info-card" style="background: rgba(255,255,255,0.9);">
-                <p style="font-family: 'Aboreto', sans-serif; color: #888; font-size: 0.8rem; letter-spacing: 3px;"
-                    id="guest-type">FAMILIA</p>
-                <div class="guest-name" id="guest-display" style="font-size: 2.2rem; color: var(--accent-blue);">
-                    CARGANDO...</div>
-                <div class="pases-badge" id="pases-display"
-                    style="background: var(--accent-blue); font-size: 1.1rem; padding: 12px 40px;">---</div>
-            </div>
-            <p style="font-size: 0.8rem; letter-spacing: 2px; opacity: 0.8;">SE AGRADECE LA COMPRENSIÓN, ESTE EVENTO ES
-                PARA ADULTOS</p>
-        </section>
-
-        <!-- GIFTS & ALBUM -->
-        <section class="section">
-            <img src="https://angelfotoinvitaciones.mx/wp-content/uploads/2025/08/regalo-celeste-scaled.jpg"
-                class="icon-img" alt="Gift icon">
-            <h2>LLUVIA DE SOBRES</h2>
-            <p style="max-width: 80%; margin: 0 auto;">"Tu compañía es lo más importante para mí, pero si deseas darme
-                un obsequio, esta es mi sugerencia."</p>
-
-            <div style="margin-top:40px;">
-                <h3>VER ÁLBUM DE FOTOS</h3>
-                <div class="qr-placeholder" id="qr-container">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://web.dotstheapp.com/a?group=2379408%26dlBy=carlos1245%26code=Y9zQhQoronD2"
-                        alt="QR Album" style="width:100%; height:100%; padding:10px;">
-                </div>
-                <a href="https://web.dotstheapp.com/a?group=2379408&dlBy=carlos1245&code=Y9zQhQoronD2" target="_blank"
-                    class="btn-outline">VER ÁLBUM COMPLETO</a>
-            </div>
-        </section>
+        <!-- PASES / GUEST INFO -->
+        <div class="pases-section">
+            <p style="font-family: 'Aboreto', sans-serif; color: #999; font-size: 0.75rem; letter-spacing: 3px; margin-bottom: 5px;"
+                id="guest-type">FAMILIA</p>
+            <div class="guest-name-display" id="guest-display">CARGANDO...</div>
+            <div class="pases-badge" id="pases-display">---</div>
+        </div>
 
         <!-- RSVP -->
-        <section class="section section-silver" id="rsvp">
-            <h2>CONFIRMACIÓN</h2>
+        <div class="rsvp-section">
+            <h2>¡Quiero que formes parte de este gran día!</h2>
+            <p style="margin-bottom: 20px; font-size: 0.9rem;">Confirma tu asistencia aquí antes del día 15/03/26.</p>
             <div class="form-group">
-                <label>NOMBRE DEL INVITADO</label>
+                <label>NOMBRE</label>
                 <input type="text" id="form-name" readonly>
             </div>
             <div class="form-group">
-                <label>WHATSAPP DE CONTACTO</label>
-                <input type="tel" id="form-phone" placeholder="Ej: 8112345678">
-            </div>
-            <div class="form-group">
-                <label>¿CONFIRMAS TU ASISTENCIA?</label>
+                <label>¿ASISTIRÁS?</label>
                 <select id="form-attendance">
-                    <option value="SÍ">SÍ, CON GUSTO ASISTIRÉ</option>
-                    <option value="NO">LO SIENTO, NO PODRÉ IR</option>
+                    <option value="SÍ">SÍ</option>
+                    <option value="NO">NO</option>
                 </select>
             </div>
-            <button class="btn-action" onclick="enviarConfirmacion()">ENVIAR POR WHATSAPP</button>
-        </section>
+            <button class="btn-confirm" onclick="enviarConfirmacion()">CONFIRMAR ASISTENCIA</button>
+        </div>
+
+        <!-- ADULTS NOTE -->
+        <div class="adults-note">
+            <p>Se agradece la comprensión, éste evento está destinado sólo para adultos.</p>
+            <p style="font-weight: bold; margin-top: 10px;">( No niños )</p>
+        </div>
 
         <!-- FOOTER -->
-        <div class="frame-starry" style="padding: 80px 20px;">
-            <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/nombre-8176-regina.png"
-                style="max-width: 70%; opacity: 0.9;">
-            <p style="font-size: 0.7rem; letter-spacing: 4px; opacity: 0.4; margin-top: 30px;">ANGEL FOTO INVITACIONES
-            </p>
+        <div class="footer-section">
+            <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/15-08-01-26-_8176-IRIS-NANCY-RDZ-4735.png"
+                alt="Regina Footer">
+            <div class="footer-name">
+                <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/nombre-8176-regina.png"
+                    alt="Regina">
+                <p class="footer-credit">ANGEL FOTO INVITACIONES</p>
+            </div>
         </div>
+
     </div>
 
-
-    <!-- JAVASCRIPT LOGIC -->
     <script>
-        // Target Date: March 27, 2026, 17:30 (Subtracted 30 min from 18:00)
+        // Countdown to March 27, 2026 17:30
         const targetDate = new Date('March 27, 2026 17:30:00').getTime();
-
         function updateCountdown() {
             const now = new Date().getTime();
-            const difference = targetDate - now;
-
-            const d = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((difference % (1000 * 60)) / 1000);
-
-            document.getElementById('days').innerText = d < 10 ? '0' + d : d;
-            document.getElementById('hours').innerText = h < 10 ? '0' + h : h;
-            document.getElementById('minutes').innerText = m < 10 ? '0' + m : m;
-            document.getElementById('seconds').innerText = s < 10 ? '0' + s : s;
-
-            if (difference < 0) {
-                clearInterval(countdownInterval);
-                document.querySelector('.countdown-container').style.display = 'none';
-            }
+            const diff = targetDate - now;
+            if (diff < 0) return;
+            document.getElementById('days').innerText = String(Math.floor(diff / 86400000)).padStart(2, '0');
+            document.getElementById('hours').innerText = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
         }
-
-        const countdownInterval = setInterval(updateCountdown, 1000);
+        setInterval(updateCountdown, 1000);
         updateCountdown();
 
+        // Cover page
         function openInvitation() {
             document.getElementById('cover-page').classList.add('hidden');
             document.getElementById('invitationContent').classList.add('visible');
             document.getElementById('audioToggle').style.display = 'flex';
-
             const audio = document.getElementById('bgMusic');
-            audio.play().catch(e => console.log("Auto-play prevented"));
+            audio.play().catch(() => { });
             playing = true;
-            document.getElementById('audioToggle').innerText = "🎵";
         }
 
-        // Gallery
-        const galleryImages = [
+        // Gallery slideshow
+        const slides = [
             "https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/3-08-01-26-_8176-IRIS-NANCY-RDZ-4756.png",
             "https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/4-08-01-26-_8176-IRIS-NANCY-RDZ-4775.png",
             "https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/5-08-01-26-_8176-IRIS-NANCY-RDZ-4694.png",
@@ -782,42 +681,28 @@
             "https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/7-08-01-26-_8176-IRIS-NANCY-RDZ-4664.png",
             "https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/8-08-01-26-_8176-IRIS-NANCY-RDZ-4731.png"
         ];
-
-        const galleryContainer = document.getElementById('photoGallery');
-        galleryImages.forEach((src, idx) => {
-            const slide = document.createElement('div');
-            slide.className = 'carousel-slide' + (idx === 0 ? ' active' : '');
-            slide.style.backgroundImage = `url('${src}')`;
-            galleryContainer.appendChild(slide);
-        });
-
-        let currentSlide = 0;
+        let slideIdx = 0;
         setInterval(() => {
-            const slides = document.querySelectorAll('.carousel-slide');
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
+            slideIdx = (slideIdx + 1) % slides.length;
+            document.getElementById('slideshow-img').src = slides[slideIdx];
         }, 4000);
 
+        // Load guests from JSON
         async function init() {
             let invitados = [];
             try {
-                const response = await fetch('invitados.json');
-                invitados = await response.json();
-            } catch (e) {
-                console.log("Error loading guests");
-            }
+                const res = await fetch('invitados.json');
+                invitados = await res.json();
+            } catch (e) { console.log("Error loading guests"); }
 
-            const urlParams = new URLSearchParams(window.location.search);
-            const guestId = urlParams.get('id');
-
-            if (guestId && invitados.length > 0) {
-                const guest = invitados.find(g => g.id == guestId);
+            const id = new URLSearchParams(window.location.search).get('id');
+            if (id && invitados.length > 0) {
+                const guest = invitados.find(g => g.id == id);
                 if (guest) {
                     document.getElementById('guest-display').innerText = guest.name;
                     document.getElementById('pases-display').innerText = guest.pases_text;
                     document.getElementById('form-name').value = guest.name;
-                    document.getElementById('guest-type').innerText = guest.is_personal ? "PASE PERSONAL" : "PASA FAMILIAR";
+                    document.getElementById('guest-type').innerText = guest.is_personal ? "PASE PERSONAL" : "PASE FAMILIAR";
                 }
             } else {
                 document.getElementById('guest-display').innerText = "FAMILIA Y AMIGOS";
@@ -828,24 +713,19 @@
 
         function enviarConfirmacion() {
             const name = document.getElementById('form-name').value;
+            const att = document.getElementById('form-attendance').value;
             const pases = document.getElementById('pases-display').innerText;
-            const msg = `Hola! Soy ${name}. Confirmo mi asistencia para los XV de Regina. Mi pase es: ${pases}.`;
-            const waUrl = `https://wa.me/528182064610?text=${encodeURIComponent(msg)}`;
-            window.open(waUrl, '_blank');
+            const msg = `Hola! Soy ${name}. ${att === 'SÍ' ? 'Confirmo mi asistencia' : 'No podré asistir'} a los XV de Regina. Mi pase: ${pases}.`;
+            window.open(`https://wa.me/528182064610?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
+        // Audio toggle
         const audio = document.getElementById('bgMusic');
         const toggle = document.getElementById('audioToggle');
         let playing = false;
-
         toggle.onclick = () => {
-            if (playing) {
-                audio.pause();
-                toggle.innerText = "🔇";
-            } else {
-                audio.play();
-                toggle.innerText = "🎵";
-            }
+            if (playing) { audio.pause(); toggle.innerText = "🔇"; }
+            else { audio.play(); toggle.innerText = "🎵"; }
             playing = !playing;
         };
 
