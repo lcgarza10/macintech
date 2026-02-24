@@ -486,7 +486,7 @@
             background: linear-gradient(135deg, #d8ecf5 0%, #e4f1f8 50%, #d0e8f4 100%);
         }
 
-        .confirm-section .thanks-text {
+        .thanks-text {
             font-family: 'Rosarivo', serif;
             font-style: italic;
             font-size: 2rem;
@@ -847,27 +847,30 @@
                 alt="">
         </div>
 
-        <!-- 11. INVITATION CARD (loaded from JSON) -->
-        <div class="pases-section">
+        <!-- 11-13. INVITATION + CONFIRM + RSVP (one continuous section) -->
+        <div class="rsvp-section">
+
+            <!-- Invitation card -->
             <div class="invite-card">
                 <p class="invite-label">Invitación para:</p>
                 <div class="guest-name-display" id="guest-display">CARGANDO...</div>
                 <p class="guest-asistencia" id="pases-display">---</p>
             </div>
-        </div>
 
-        <!-- 12. THANK YOU + CONFIRM -->
-        <div class="confirm-section">
+            <br>
+
+            <!-- Thank you + confirm -->
             <p class="thanks-text">Te agradecemos confirmar</p>
             <div class="confirm-box">CONFIRMAR ASISTENCIA ANTES DEL<br>06 DE MARZO 2026</div>
-        </div>
 
-        <!-- 13. RSVP FORM (clean celeste) -->
-        <div class="rsvp-section">
+            <br><br>
+
+            <!-- Stars -->
             <img class="stars-divider"
                 src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2025/09/estrellas-7177-LARISSA.png"
                 alt="estrellas">
 
+            <!-- Form -->
             <div class="form-group">
                 <label>TELÉFONO ( OPCIONAL )</label>
                 <input type="tel" id="form-phone" placeholder="">
