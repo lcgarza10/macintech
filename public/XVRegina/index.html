@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>XV REGINA - Invitación Especial</title>
+
+    <!-- Fonts from Google Fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Aboreto&family=Rosarivo:ital@0;1&family=Arizonia&display=swap">
+
+    <style>
+        :root {
+            --primary-bg: #bceeff;
+            --secondary-bg: #ffffff;
+            --accent-blue: #1a5163;
+            --text-main: #415c75;
+            --text-heading: #1a5163;
+            --silver-texture: url('https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2025/09/fondo-de-textura-de-papel-metalico-plateado-1.jpg');
+            --celestial-bg: url('https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/5207900.jpg');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rosarivo', serif;
+            color: var(--text-main);
+            background-color: var(--primary-bg);
+            background-image: var(--celestial-bg);
+            background-size: cover;
+            background-attachment: fixed;
+            overflow-x: hidden;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        /* Hero Section */
+        .section-hero {
+            width: 100%;
+            height: auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url('https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/1-PORTADA-08-01-26-_8176-IRIS-NANCY-RDZ-4745.png');
+            background-size: cover;
+            background-position: center;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .title-img {
+            max-width: 90%;
+            margin-top: 20px;
+            filter: drop-shadow(0 0 10px rgba(0, 150, 255, 0.5));
+        }
+
+        .date-img {
+            max-width: 70%;
+            margin-top: 20px;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 50px 30px;
+            text-align: center;
+            background: white;
+            position: relative;
+        }
+
+        .section-silver {
+            background-image: var(--silver-texture);
+            background-size: cover;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .section-celestial {
+            background-image: var(--celestial-bg);
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .section-celestial h2 {
+            color: white !important;
+        }
+
+        .prayer {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin: 20px 0;
+            color: #555;
+            font-family: 'Arizonia', cursive;
+        }
+
+        h2 {
+            font-family: 'Aboreto', sans-serif;
+            color: var(--text-heading);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 30px 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Pases Card */
+        .pases-card {
+            background-image: var(--silver-texture);
+            background-size: cover;
+            padding: 40px 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            position: relative;
+            z-index: 1;
+        }
+
+        .pases-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.88);
+            border-radius: 15px;
+            z-index: -1;
+        }
+
+        .guest-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+            margin: 10px 0;
+            text-transform: uppercase;
+        }
+
+        .pases-badge {
+            display: inline-block;
+            background: var(--accent-blue);
+            color: white;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-family: 'Aboreto', sans-serif;
+            font-weight: bold;
+            margin-top: 15px;
+            letter-spacing: 2px;
+        }
+
+        /* Form */
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            font-family: 'Aboreto', sans-serif;
+            font-size: 0.75rem;
+            color: #666;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .btn-action {
+            background: var(--accent-blue);
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 20px;
+            font-family: 'Aboreto', sans-serif;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            letter-spacing: 2px;
+            transition: transform 0.2s;
+            margin-top: 10px;
+            box-shadow: 0 5px 15px rgba(26, 81, 99, 0.3);
+        }
+
+        .btn-action:active {
+            transform: scale(0.98);
+        }
+
+        /* Audio Control */
+        .audio-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 1000;
+            background: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        .footer-banner {
+            background-image: var(--celestial-bg);
+            background-size: cover;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-image {
+            width: 100%;
+            display: block;
+        }
+
+        @media (max-width: 500px) {
+            .main-container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="audio-btn" id="audioToggle">🎵</div>
+    <audio id="bgMusic" loop>
+        <source
+            src="https://angelfotoinvitaciones.mx/wp-content/uploads/2026/02/Carmen-Sarahi-Libre-Soy-De-Frozen-Una-Aventura-Congelada_Con-letra-DisneyMusicLAVEVO.mp3"
+            type="audio/mpeg">
+    </audio>
+
+    <div class="main-container">
+        <!-- HERO -->
+        <section class="section-hero">
+            <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/nombre-8176-regina.png"
+                alt="XV REGINA" class="title-img">
+            <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/fecha-8176-regina.png"
+                alt="27 Marzo 2026" class="date-img">
+        </section>
+
+        <!-- PRAYER -->
+        <section class="section section-silver">
+            <p class="prayer">"Gracias Señor por permitirme llegar a este día tan especial en mi vida, por mi familia y
+                mis amigos."</p>
+        </section>
+
+        <!-- CHURCH -->
+        <section class="section">
+            <h2>CEREMONIA RELIGIOSA</h2>
+            <div class="info-card">
+                <p><strong>CATEDRAL METROPOLITANA</strong></p>
+                <p>18:00 HORAS</p>
+                <button class="btn-action" style="background:#4b8fa6; margin-top:20px;"
+                    onclick="window.open('https://maps.app.goo.gl/YyQ5L5m8J8s5h9r47')">VER MAPA</button>
+            </div>
+        </section>
+
+        <!-- PHOTO BREAK -->
+        <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/2-FONDO-22-01-26-_8176-IRIS-NANCY-RDZ-6461.png"
+            style="width:100%;" alt="Regina Photo">
+
+        <!-- RECEPTION -->
+        <section class="section">
+            <h2>RECEPCIÓN</h2>
+            <div class="info-card">
+                <p><strong>HACIENDA SAN PEDRO</strong></p>
+                <p>20:30 HORAS</p>
+                <button class="btn-action" style="background:#4b8fa6; margin-top:20px;"
+                    onclick="window.open('https://maps.app.goo.gl/Z8m9B5P7Y9C2D4N67')">VER MAPA</button>
+            </div>
+        </section>
+
+        <!-- PASES -->
+        <section class="section section-celestial">
+            <div class="pases-card">
+                <p style="font-family: 'Aboreto', sans-serif; color: #888; font-size: 0.8rem; letter-spacing: 2px;"
+                    id="guest-type">FAMILIA</p>
+                <div class="guest-name" id="guest-display">CARGANDO...</div>
+                <div class="pases-badge" id="pases-display">---</div>
+            </div>
+            <p style="font-size: 0.85rem; letter-spacing: 1px;">SE AGRADECE LA COMPRENSIÓN, ESTE EVENTO ES PARA ADULTOS
+            </p>
+        </section>
+
+        <!-- RSVP -->
+        <section class="section" id="rsvp">
+            <h2>CONFIRMACIÓN</h2>
+            <div class="form-group">
+                <label>NOMBRE DEL INVITADO</label>
+                <input type="text" id="form-name" readonly>
+            </div>
+            <div class="form-group">
+                <label>WHATSAPP DE CONTACTO</label>
+                <input type="tel" id="form-phone" placeholder="Ej: 8112345678">
+            </div>
+            <div class="form-group">
+                <label>¿CONFIRMAS TU ASISTENCIA?</label>
+                <select id="form-attendance">
+                    <option value="SÍ">SÍ, CON GUSTO ASISTIRÉ</option>
+                    <option value="NO">LO SIENTO, NO PODRÉ IR</option>
+                </select>
+            </div>
+            <button class="btn-action" onclick="enviarConfirmacion()">ENVIAR POR WHATSAPP</button>
+        </section>
+
+        <!-- FOOTER -->
+        <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/15-08-01-26-_8176-IRIS-NANCY-RDZ-4735.png"
+            class="footer-image" alt="Regina Footer">
+        <div class="footer-banner">
+            <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/nombre-8176-regina.png"
+                style="max-width: 60%; opacity: 0.8;" alt="Regina Small">
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Database of guests (Embedded or could be fetched)
+        // This is populated by process_excel.py
+        const GUESTS_DATA = []; // Will be injected via script or fetch
+
+        async function init() {
+            // Load guests from invitados.json if available, else use embedded (simplified for local testing)
+            let invitados = [];
+            try {
+                const response = await fetch('invitados.json');
+                invitados = await response.json();
+            } catch (e) {
+                console.log("Using embedded data (if any)");
+            }
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const guestId = urlParams.get('id');
+
+            if (guestId && invitados.length > 0) {
+                const guest = invitados.find(g => g.id == guestId);
+                if (guest) {
+                    document.getElementById('guest-display').innerText = guest.name;
+                    document.getElementById('pases-display').innerText = guest.pases_text;
+                    document.getElementById('form-name').value = guest.name;
+                    document.getElementById('guest-type').innerText = guest.is_personal ? "PERSONAL" : "FAMILIA";
+                }
+            } else {
+                document.getElementById('guest-display').innerText = "FAMILIA Y AMIGOS";
+                document.getElementById('pases-display').innerText = "BIENVENIDOS";
+                document.getElementById('form-name').value = "INVITADO";
+            }
+        }
+
+        function enviarConfirmacion() {
+            const name = document.getElementById('form-name').value;
+            const phone = document.getElementById('form-phone').value;
+            const att = document.getElementById('form-attendance').value;
+            const pases = document.getElementById('pases-display').innerText;
+
+            if (!phone) {
+                alert("Por favor ingresa tu WhatsApp de contacto");
+                return;
+            }
+
+            const msg = `Hola! Soy ${name}. Confirmo mi asistencia para los XV de Regina (${att}). Mi pase es: ${pases}. Contacto: ${phone}`;
+            const waUrl = `https://wa.me/528182064610?text=${encodeURIComponent(msg)}`; // Reemplazar con el número del anfitrión
+            window.open(waUrl, '_blank');
+        }
+
+        // Music Control
+        const audio = document.getElementById('bgMusic');
+        const toggle = document.getElementById('audioToggle');
+        let playing = false;
+
+        toggle.onclick = () => {
+            if (playing) {
+                audio.pause();
+                toggle.innerText = "🔇";
+            } else {
+                audio.play();
+                toggle.innerText = "🎵";
+            }
+            playing = !playing;
+        };
+
+        window.onload = init;
+    </script>
+</body>
+
+</html>

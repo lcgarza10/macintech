@@ -1,0 +1,975 @@
+[
+    {
+        "id": 1,
+        "name": "NOSOTROS",
+        "total": 5,
+        "is_personal": false,
+        "pases_text": "5 PASES"
+    },
+    {
+        "id": 2,
+        "name": "MAMA",
+        "total": 1,
+        "is_personal": false,
+        "pases_text": "1 PASE"
+    },
+    {
+        "id": 3,
+        "name": "KARINA",
+        "total": 4,
+        "is_personal": false,
+        "pases_text": "4 PASES"
+    },
+    {
+        "id": 4,
+        "name": "JESSICA",
+        "total": 4,
+        "is_personal": false,
+        "pases_text": "4 PASES"
+    },
+    {
+        "id": 5,
+        "name": "JULIO SOBIRNO",
+        "total": 2,
+        "is_personal": false,
+        "pases_text": "2 PASES"
+    },
+    {
+        "id": 6,
+        "name": "KARY RDZ",
+        "total": 3,
+        "is_personal": false,
+        "pases_text": "3 PASES"
+    },
+    {
+        "id": 7,
+        "name": "MAYE",
+        "total": 3,
+        "is_personal": false,
+        "pases_text": "3 PASES"
+    },
+    {
+        "id": 8,
+        "name": "JAIME",
+        "total": 4,
+        "is_personal": false,
+        "pases_text": "4 PASES"
+    },
+    {
+        "id": 9,
+        "name": "CECY",
+        "total": 4,
+        "is_personal": false,
+        "pases_text": "4 PASES"
+    },
+    {
+        "id": 10,
+        "name": "JULIO",
+        "total": 3,
+        "is_personal": false,
+        "pases_text": "3 PASES"
+    },
+    {
+        "id": 11,
+        "name": "ABUELITO IRIS",
+        "total": 3,
+        "is_personal": false,
+        "pases_text": "3 PASES"
+    },
+    {
+        "id": 12,
+        "name": "LUPITA",
+        "total": 2,
+        "is_personal": false,
+        "pases_text": "2 PASES"
+    },
+    {
+        "id": 13,
+        "name": "TIA HILDA",
+        "total": 2,
+        "is_personal": false,
+        "pases_text": "2 PASES"
+    },
+    {
+        "id": 14,
+        "name": "TIA IRMA",
+        "total": 2,
+        "is_personal": false,
+        "pases_text": "2 PASES"
+    },
+    {
+        "id": 15,
+        "name": "DE ALLENDE?",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 16,
+        "name": "MARIO",
+        "total": 1,
+        "is_personal": false,
+        "pases_text": "1 PASE"
+    },
+    {
+        "id": 18,
+        "name": "SALINAS:",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 19,
+        "name": "TIA MIRTHALA",
+        "total": 2,
+        "is_personal": false,
+        "pases_text": "2 PASES"
+    },
+    {
+        "id": 20,
+        "name": "ARNULFO",
+        "total": 4,
+        "is_personal": false,
+        "pases_text": "4 PASES"
+    },
+    {
+        "id": 21,
+        "name": "DANIELA",
+        "total": 4,
+        "is_personal": false,
+        "pases_text": "4 PASES"
+    },
+    {
+        "id": 22,
+        "name": "VICTOR",
+        "total": 3,
+        "is_personal": false,
+        "pases_text": "3 PASES"
+    },
+    {
+        "id": 23,
+        "name": "TIA MARIA",
+        "total": 2,
+        "is_personal": false,
+        "pases_text": "2 PASES"
+    },
+    {
+        "id": 24,
+        "name": "BETO",
+        "total": 2,
+        "is_personal": false,
+        "pases_text": "2 PASES"
+    },
+    {
+        "id": 25,
+        "name": "GABY",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 26,
+        "name": "LAURA",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 27,
+        "name": "PATY",
+        "total": 2,
+        "is_personal": false,
+        "pases_text": "2 PASES"
+    },
+    {
+        "id": 28,
+        "name": "FREDY",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 29,
+        "name": "El PADRE",
+        "total": 1,
+        "is_personal": false,
+        "pases_text": "1 PASE"
+    },
+    {
+        "id": 30,
+        "name": "NERE",
+        "total": 3,
+        "is_personal": false,
+        "pases_text": "3 PASES"
+    },
+    {
+        "id": 31,
+        "name": "TITO EL DE MI TIA MARIA?",
+        "total": 2,
+        "is_personal": false,
+        "pases_text": "2 PASES"
+    },
+    {
+        "id": 33,
+        "name": "CHAVA",
+        "total": 4,
+        "is_personal": false,
+        "pases_text": "4 PASES"
+    },
+    {
+        "id": 34,
+        "name": "PEPE",
+        "total": 4,
+        "is_personal": false,
+        "pases_text": "4 PASES"
+    },
+    {
+        "id": 35,
+        "name": "GERA",
+        "total": 4,
+        "is_personal": false,
+        "pases_text": "4 PASES"
+    },
+    {
+        "id": 36,
+        "name": "MAHY",
+        "total": 4,
+        "is_personal": false,
+        "pases_text": "4 PASES"
+    },
+    {
+        "id": 37,
+        "name": "PACO",
+        "total": 2,
+        "is_personal": false,
+        "pases_text": "2 PASES"
+    },
+    {
+        "id": 38,
+        "name": "PONCHO",
+        "total": 1,
+        "is_personal": false,
+        "pases_text": "1 PASE"
+    },
+    {
+        "id": 39,
+        "name": "BLANCA",
+        "total": 1,
+        "is_personal": false,
+        "pases_text": "1 PASE"
+    },
+    {
+        "id": 40,
+        "name": "RENE",
+        "total": 3,
+        "is_personal": false,
+        "pases_text": "3 PASES"
+    },
+    {
+        "id": 41,
+        "name": "CHUY",
+        "total": 3,
+        "is_personal": false,
+        "pases_text": "3 PASES"
+    },
+    {
+        "id": 42,
+        "name": "REYNALDO",
+        "total": 1,
+        "is_personal": false,
+        "pases_text": "1 PASE"
+    },
+    {
+        "id": 43,
+        "name": "JUAN DE DIOS",
+        "total": 3,
+        "is_personal": false,
+        "pases_text": "3 PASES"
+    },
+    {
+        "id": 44,
+        "name": "KIKE TREVIÑO",
+        "total": 2,
+        "is_personal": false,
+        "pases_text": "2 PASES"
+    },
+    {
+        "id": 45,
+        "name": "KIKE(ARELY)",
+        "total": 2,
+        "is_personal": false,
+        "pases_text": "2 PASES"
+    },
+    {
+        "id": 46,
+        "name": "RUPER",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 47,
+        "name": "TRIBY",
+        "total": 1,
+        "is_personal": false,
+        "pases_text": "1 PASE"
+    },
+    {
+        "id": 48,
+        "name": "DANY",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 50,
+        "name": "PATY GUAJARDO",
+        "total": 3,
+        "is_personal": false,
+        "pases_text": "3 PASES"
+    },
+    {
+        "id": 51,
+        "name": "BLANQUITA",
+        "total": 4,
+        "is_personal": false,
+        "pases_text": "4 PASES"
+    },
+    {
+        "id": 52,
+        "name": "MARLENE",
+        "total": 3,
+        "is_personal": false,
+        "pases_text": "3 PASES"
+    },
+    {
+        "id": 53,
+        "name": "FREDY",
+        "total": 3,
+        "is_personal": false,
+        "pases_text": "3 PASES"
+    },
+    {
+        "id": 54,
+        "name": "ROLY",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 55,
+        "name": "GABY LA DE DON BOCHO",
+        "total": 1,
+        "is_personal": false,
+        "pases_text": "1 PASE"
+    },
+    {
+        "id": 56,
+        "name": "MARIZA",
+        "total": 1,
+        "is_personal": false,
+        "pases_text": "1 PASE"
+    },
+    {
+        "id": 57,
+        "name": "SONIA",
+        "total": 1,
+        "is_personal": false,
+        "pases_text": "1 PASE"
+    },
+    {
+        "id": 58,
+        "name": "SANDY",
+        "total": 1,
+        "is_personal": false,
+        "pases_text": "1 PASE"
+    },
+    {
+        "id": 59,
+        "name": "LORENA IGLESIA",
+        "total": 2,
+        "is_personal": false,
+        "pases_text": "2 PASES"
+    },
+    {
+        "id": 60,
+        "name": "ALE",
+        "total": 3,
+        "is_personal": false,
+        "pases_text": "3 PASES"
+    },
+    {
+        "id": 61,
+        "name": "ANA MARIA(MAMA DE HANIA)",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 62,
+        "name": "TERE",
+        "total": 2,
+        "is_personal": false,
+        "pases_text": "2 PASES"
+    },
+    {
+        "id": 63,
+        "name": "CLAUDIA FLORES",
+        "total": 2,
+        "is_personal": false,
+        "pases_text": "2 PASES"
+    },
+    {
+        "id": 64,
+        "name": "MAMA DE ADRIANITA",
+        "total": 3,
+        "is_personal": false,
+        "pases_text": "3 PASES"
+    },
+    {
+        "id": 65,
+        "name": "JAIME TREVINO",
+        "total": 3,
+        "is_personal": false,
+        "pases_text": "3 PASES"
+    },
+    {
+        "id": 66,
+        "name": "CANY",
+        "total": 2,
+        "is_personal": false,
+        "pases_text": "2 PASES"
+    },
+    {
+        "id": 67,
+        "name": "GONZALO",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 68,
+        "name": "AARON",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 69,
+        "name": "ANITA O TITI",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 70,
+        "name": "DANIEL MORALES",
+        "total": 2,
+        "is_personal": false,
+        "pases_text": "2 PASES"
+    },
+    {
+        "id": 72,
+        "name": "NORA",
+        "total": 3,
+        "is_personal": false,
+        "pases_text": "3 PASES"
+    },
+    {
+        "id": 73,
+        "name": "KARLA",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 74,
+        "name": "LILY",
+        "total": 3,
+        "is_personal": false,
+        "pases_text": "3 PASES"
+    },
+    {
+        "id": 75,
+        "name": "SHANTY",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 77,
+        "name": "RULY",
+        "total": 2,
+        "is_personal": false,
+        "pases_text": "2 PASES"
+    },
+    {
+        "id": 78,
+        "name": "HELIO TREVINO",
+        "total": 2,
+        "is_personal": false,
+        "pases_text": "2 PASES"
+    },
+    {
+        "id": 79,
+        "name": "IVONE FLORES",
+        "total": 3,
+        "is_personal": false,
+        "pases_text": "3 PASES"
+    },
+    {
+        "id": 80,
+        "name": "CLAUDIA LA DE TONIN",
+        "total": 2,
+        "is_personal": false,
+        "pases_text": "2 PASES"
+    },
+    {
+        "id": 81,
+        "name": "ITA",
+        "total": 1,
+        "is_personal": false,
+        "pases_text": "1 PASE"
+    },
+    {
+        "id": 82,
+        "name": "GABY LA DE PALOMA",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 83,
+        "name": "KEKO",
+        "total": 2,
+        "is_personal": false,
+        "pases_text": "2 PASES"
+    },
+    {
+        "id": 84,
+        "name": "SHARON",
+        "total": 2,
+        "is_personal": false,
+        "pases_text": "2 PASES"
+    },
+    {
+        "id": 86,
+        "name": "HIDALGO:",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 87,
+        "name": "TIA LETY",
+        "total": 1,
+        "is_personal": false,
+        "pases_text": "1 PASE"
+    },
+    {
+        "id": 88,
+        "name": "JANY",
+        "total": 2,
+        "is_personal": false,
+        "pases_text": "2 PASES"
+    },
+    {
+        "id": 89,
+        "name": "BIANKA",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 90,
+        "name": "CHUY CONEJO",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 91,
+        "name": "CHUY GORDO",
+        "total": 3,
+        "is_personal": false,
+        "pases_text": "3 PASES"
+    },
+    {
+        "id": 92,
+        "name": "RUBEN",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 93,
+        "name": "TIA ANGELINA",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 94,
+        "name": "BRENDA",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 95,
+        "name": "SILVIA",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 96,
+        "name": "DANY",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 97,
+        "name": "TIA SAN JUANA",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 98,
+        "name": "DANY EL DE ANGELINA",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 99,
+        "name": "TIA MARTHA",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 100,
+        "name": "MONTERREY:",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 101,
+        "name": "OLGA Y PEDRO",
+        "total": 4,
+        "is_personal": false,
+        "pases_text": "4 PASES"
+    },
+    {
+        "id": 102,
+        "name": "CARLINA Y ALEJANDRO",
+        "total": 3,
+        "is_personal": false,
+        "pases_text": "3 PASES"
+    },
+    {
+        "id": 104,
+        "name": "AMIGOS DE REGINA:(QUE NO ESTEN YA EN LA LISTA DE ARRIBA)",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 105,
+        "name": "IVANKA",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 106,
+        "name": "NAYELI",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 107,
+        "name": "LIZETH",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 108,
+        "name": "HANNA",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 109,
+        "name": "ESTHEISY",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 110,
+        "name": "DANIELA",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 111,
+        "name": "LAURA",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 112,
+        "name": "MELVA",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 113,
+        "name": "NACHO",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 114,
+        "name": "KIMBERLY",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 115,
+        "name": "DANIELA",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 116,
+        "name": "MELODY",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 117,
+        "name": "JOVANA",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 118,
+        "name": "SUL",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 119,
+        "name": "SARAHI",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 120,
+        "name": "DAVID",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 121,
+        "name": "DIEGO",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 122,
+        "name": "KEILA",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 123,
+        "name": "JONATHAN",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 124,
+        "name": "ABHI",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 125,
+        "name": "DAVID",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 126,
+        "name": "CHRIS",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 127,
+        "name": "DIEGO",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 128,
+        "name": "MAURICIO",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 129,
+        "name": "REBECA",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 130,
+        "name": "IVANNA",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 131,
+        "name": "GRUPO DE REGINA",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 132,
+        "name": "CAROL HIJA MALENA",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 133,
+        "name": "MIA HIDA DE PILY",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 134,
+        "name": "LUCIANA",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 135,
+        "name": "DANNA LA DE BETTY",
+        "total": 1,
+        "is_personal": true,
+        "pases_text": "PASE PERSONAL"
+    },
+    {
+        "id": 137,
+        "name": "AMIGOS DE CARLITOS:",
+        "total": 0,
+        "is_personal": false,
+        "pases_text": "0 PASES"
+    },
+    {
+        "id": 138,
+        "name": "CHEMA",
+        "total": 1,
+        "is_personal": false,
+        "pases_text": "1 PASE"
+    },
+    {
+        "id": 139,
+        "name": "ALESSANDRO",
+        "total": 1,
+        "is_personal": false,
+        "pases_text": "1 PASE"
+    },
+    {
+        "id": 140,
+        "name": "CHRIS",
+        "total": 1,
+        "is_personal": false,
+        "pases_text": "1 PASE"
+    },
+    {
+        "id": 141,
+        "name": "SEBAS",
+        "total": 1,
+        "is_personal": false,
+        "pases_text": "1 PASE"
+    },
+    {
+        "id": 142,
+        "name": "MANUEL",
+        "total": 1,
+        "is_personal": false,
+        "pases_text": "1 PASE"
+    },
+    {
+        "id": 143,
+        "name": "LEONEL",
+        "total": 1,
+        "is_personal": false,
+        "pases_text": "1 PASE"
+    },
+    {
+        "id": 144,
+        "name": "DAFNE JM",
+        "total": 1,
+        "is_personal": false,
+        "pases_text": "1 PASE"
+    },
+    {
+        "id": 145,
+        "name": "GAEL",
+        "total": 1,
+        "is_personal": false,
+        "pases_text": "1 PASE"
+    },
+    {
+        "id": 146,
+        "name": "FER SANCHEZ",
+        "total": 1,
+        "is_personal": false,
+        "pases_text": "1 PASE"
+    },
+    {
+        "id": 147,
+        "name": "IVAN",
+        "total": 1,
+        "is_personal": false,
+        "pases_text": "1 PASE"
+    }
+]
