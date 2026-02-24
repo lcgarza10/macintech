@@ -987,8 +987,40 @@
             const att = document.getElementById('attend-value').value;
             const msg = document.getElementById('form-msg').value;
             const pases = document.getElementById('pases-display').textContent;
-            const txt = `Hola! Soy ${name}. ${att === 'SÍ' ? 'Confirmo mi asistencia' : 'No podré asistir'} a los XV de Regina. ${pases}. Tel: ${phone}. ${msg}`;
-            window.open(`https://wa.me/528182064610?text=${encodeURIComponent(txt)}`, '_blank');
+            const id = new URLSearchParams(location.search).get('id') || '0';
+
+            // Disable button while sending
+            const btn = document.querySelector('.btn-enviar');
+            btn.textContent = 'ENVIANDO...';
+            btn.disabled = true;
+
+            // Send to Google Sheets
+            const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwXsckgr3OBkaXMiPFiIzKvQVHwxYayzSg1HG02XLH6QzscN-vf0tWk9scUUwJvGpHU/exec';
+
+            fetch(SHEET_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    id: id,
+                    nombre: name,
+                    telefono: phone,
+                    asistira: att,
+                    mensaje: msg,
+                    pases: pases
+                })
+            }).then(() => {
+                btn.textContent = '✓ ENVIADO';
+                btn.style.background = '#4CAF50';
+                // Also open WhatsApp
+                const txt = `Hola! Soy ${name}. ${att === 'SÍ' ? 'Confirmo mi asistencia' : 'No podré asistir'} a los XV de Regina. ${pases}. Tel: ${phone}. ${msg}`;
+                window.open(`https://wa.me/528182064610?text=${encodeURIComponent(txt)}`, '_blank');
+            }).catch(() => {
+                btn.textContent = '✓ ENVIADO';
+                btn.style.background = '#4CAF50';
+                const txt = `Hola! Soy ${name}. ${att === 'SÍ' ? 'Confirmo mi asistencia' : 'No podré asistir'} a los XV de Regina. ${pases}. Tel: ${phone}. ${msg}`;
+                window.open(`https://wa.me/528182064610?text=${encodeURIComponent(txt)}`, '_blank');
+            });
         }
 
         window.onload = init;
