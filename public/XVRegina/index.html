@@ -13,14 +13,15 @@
 
     <style>
         :root {
-            --primary-bg: #e3f2fd;
+            --primary-bg: #0d1b2a;
             --secondary-bg: #ffffff;
-            --accent-blue: #1a5163;
+            --accent-blue: #415c75;
             --light-blue-celeste: #b3e5fc;
             --text-main: #415c75;
             --text-heading: #1a5163;
             --silver-texture: url('https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2025/09/fondo-de-textura-de-papel-metalico-plateado-1.jpg');
-            --celestial-bg: url('https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/5207900.jpg');
+            --celestial-bg: url('https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/2-FONDO-22-01-26-_8176-IRIS-NANCY-RDZ-6461.png');
+            --stars-overlay: url('https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2025/09/estrellas-7177-LARISSA.png');
         }
 
         * {
@@ -51,7 +52,7 @@
             width: 100%;
             height: 100%;
             z-index: 2000;
-            background-image: url('https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/1-PORTADA-08-01-26-_8176-IRIS-NANCY-RDZ-4745.png');
+            background-image: var(--celestial-bg);
             background-size: cover;
             background-position: center;
             display: flex;
@@ -63,6 +64,19 @@
             padding: 20px;
         }
 
+        #cover-page::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: var(--stars-overlay);
+            background-repeat: repeat;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
         #cover-page.hidden {
             transform: translateY(-100%);
             opacity: 0;
@@ -70,13 +84,16 @@
         }
 
         .cover-content {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 40px 20px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            padding: 50px 30px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             max-width: 90%;
-            width: 400px;
+            width: 420px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         .cover-name {
@@ -129,63 +146,93 @@
         .main-container {
             width: 100%;
             max-width: 500px;
-            background: white;
-            box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.4);
             position: relative;
             display: none;
-            /* Hidden until cover is opened */
+            overflow: hidden;
         }
 
         .main-container.visible {
             display: block;
         }
 
-        /* Hero Section */
-        .section-hero {
-            width: 100%;
-            height: auto;
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-image: url('https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/1-PORTADA-08-01-26-_8176-IRIS-NANCY-RDZ-4745.png');
+        .frame-starry {
+            background-image: var(--celestial-bg);
             background-size: cover;
-            background-position: center;
-            padding: 60px 20px;
-            text-align: center;
             position: relative;
+            color: white;
+            padding: 60px 30px;
+            text-align: center;
         }
 
-        .section-hero::before {
+        .frame-starry::after {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(2px);
+            background-image: var(--stars-overlay);
+            opacity: 0.5;
+            pointer-events: none;
         }
 
-        .hero-content {
+        .frame-starry * {
             position: relative;
             z-index: 10;
         }
 
-        .title-img {
-            max-width: 100%;
-            width: 400px;
-            margin-top: 20px;
-            filter: drop-shadow(0 0 15px rgba(0, 150, 255, 0.8));
+        /* Hero Section */
+        .section-hero {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #fff;
+            padding: 0;
         }
 
-        .date-img {
-            max-width: 80%;
-            margin-top: 20px;
-            background: rgba(255, 255, 255, 0.4);
-            padding: 10px;
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
+        .hero-photo {
+            width: 100%;
+            display: block;
+        }
+
+        .hero-date-wrapper {
+            width: 100%;
+            background-image: var(--celestial-bg);
+            background-size: cover;
+            background-position: bottom;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-date-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: var(--stars-overlay);
+            opacity: 0.4;
+        }
+
+        .glass-date {
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: inline-block;
+        }
+
+        .hero-date-img {
+            max-width: 250px;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
         }
 
         /* Countdown - Larger */
@@ -268,14 +315,30 @@
 
         .prayer {
             font-style: italic;
-            font-size: 1.2rem;
-            margin: 20px 0;
-            color: #2c4a63;
+            font-size: 1.4rem;
+            color: white;
             font-family: 'Rosarivo', serif;
             line-height: 1.8;
-            max-width: 90%;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 95%;
+            margin: 0 auto;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .parents-title {
+            font-family: 'Rosarivo', serif;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            letter-spacing: 3px;
+        }
+
+        .parent-name {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: white;
+            letter-spacing: 4px;
+            margin: 5px 0;
+            text-shadow: 0 0 10px rgba(179, 229, 252, 0.4);
         }
 
         h2 {
@@ -305,27 +368,26 @@
         }
 
         /* Pases Card */
-        .pases-card {
-            background-image: var(--silver-texture);
-            background-size: cover;
-            padding: 40px 20px;
-            border-radius: 15px;
-            margin: 30px 0;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        .carousel-container {
+            width: 100%;
+            height: 500px;
             position: relative;
-            z-index: 1;
+            overflow: hidden;
+            background: #000;
         }
 
-        .pases-card::before {
-            content: '';
+        .carousel-slide {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(255, 255, 255, 0.88);
-            border-radius: 15px;
-            z-index: -1;
+            transition: opacity 1s ease-in-out;
+            opacity: 0;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
         }
 
         .guest-name {
@@ -500,11 +562,13 @@
     <div class="main-container" id="invitationContent">
         <!-- HERO -->
         <section class="section-hero">
-            <div class="hero-content">
-                <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/nombre-8176-regina.png"
-                    alt="XV REGINA" class="title-img">
-                <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/fecha-8176-regina.png"
-                    alt="27 Marzo 2026" class="date-img">
+            <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/1-PORTADA-08-01-26-_8176-IRIS-NANCY-RDZ-4745.png"
+                alt="Regina" class="hero-photo">
+            <div class="hero-date-wrapper">
+                <div class="glass-date">
+                    <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/fecha-8176-regina.png"
+                        alt="Marzo 27 2026" class="hero-date-img">
+                </div>
             </div>
         </section>
 
@@ -531,8 +595,8 @@
             </div>
         </section>
 
-        <!-- PRAYER (FULL VERSION) -->
-        <section class="section section-prayer">
+        <!-- PRAYER & PARENTS (STARRY FRAME) -->
+        <section class="frame-starry">
             <p class="prayer">
                 "Gracias señor por permitirme llegar a este día tan especial en mi vida. Estoy aquí contigo acompañada
                 de mis padres y familiares por medio de los cuales aprendí a conocerte y amarte, llena de ilusiones y
@@ -540,18 +604,18 @@
                 para luchar en nombre de todo lo que pueda alejarme de ti y así poder disfrutar de esta hermosa etapa de
                 mi vida."
             </p>
-        </section>
 
-        <!-- PARENTS -->
-        <section class="section">
-            <div class="info-card" style="margin-top:0;">
-                <h3 style="margin-bottom:20px;">MIS PADRES</h3>
-                <p style="font-size: 1.4rem; font-weight: bold; color: var(--accent-blue); letter-spacing: 2px;">LUIS
-                    CARLOS GARZA</p>
-                <p style="font-size: 1.4rem; font-weight: bold; color: var(--accent-blue); letter-spacing: 2px;">IRIS
-                    NANCY RODRÍGUEZ</p>
+            <div style="margin-top: 60px;">
+                <h3 class="parents-title">MIS PADRES</h3>
+                <p class="parent-name">LUIS CARLOS GARZA</p>
+                <p class="parent-name">IRIS NANCY RODRÍGUEZ</p>
             </div>
         </section>
+
+        <!-- PHOTO INTERMEDIATE (CAROUSEL) -->
+        <div class="carousel-container" id="photoGallery">
+            <!-- Slides will be injected by JS -->
+        </div>
 
         <!-- CHURCH -->
         <section class="section section-silver">
@@ -571,39 +635,41 @@
             style="width:100%;" alt="Regina Photo">
 
         <!-- RECEPTION -->
-        <section class="section">
+        <section class="frame-starry">
             <img src="https://angelfotoinvitaciones.mx/wp-content/uploads/2025/08/copas-celestes-scaled.jpg"
-                class="icon-img" alt="Brindis icon">
-            <h2>RECEPCIÓN</h2>
+                class="icon-img" style="filter: brightness(1.5);">
+            <h2 style="color:white; letter-spacing: 6px;">RECEPCIÓN</h2>
             <div class="info-card">
-                <p><strong>LA GALERÍA EVENTOS</strong></p>
+                <p style="font-size: 1.4rem; color: var(--accent-blue); font-weight: bold;">LA GALERÍA EVENTOS</p>
                 <p>(SALÓN PICASSO)</p>
                 <p>20:00 HORAS</p>
                 <a href="https://maps.app.goo.gl/Z8m9B5P7Y9C2D4N67" target="_blank" class="btn-action"
-                    style="background:#4b8fa6; margin-top:20px;">VER UBICACIÓN</a>
+                    style="margin-top:20px;">VER UBICACIÓN</a>
             </div>
         </section>
 
         <!-- DRESS CODE -->
-        <section class="section section-silver">
+        <section class="section">
             <img src="https://angelfotoinvitaciones.mx/wp-content/uploads/2025/08/vestido-celeste-scaled.jpg"
-                class="icon-img" alt="Dress icon">
+                class="icon-img">
             <h2>CÓDIGO DE VESTIMENTA</h2>
-            <p>FORMAL</p>
-            <p style="font-size: 0.8rem; color: #888; margin-top:10px;">COLORES RESERVADOS PARA LA QUINCEAÑERA: CELESTE
-            </p>
+            <p style="font-size: 1.2rem; font-weight: bold; letter-spacing: 2px;">FORMAL</p>
+            <p style="color: #666; font-size: 0.85rem; margin-top: 10px;">COLORES RESERVADOS PARA LA QUINCEAÑERA:
+                CELESTE</p>
         </section>
 
         <!-- PASES -->
-        <section class="section section-celestial">
-            <div class="pases-card">
-                <p style="font-family: 'Aboreto', sans-serif; color: #888; font-size: 0.8rem; letter-spacing: 2px;"
+        <section class="frame-starry">
+            <div class="info-card" style="background: rgba(255,255,255,0.9);">
+                <p style="font-family: 'Aboreto', sans-serif; color: #888; font-size: 0.8rem; letter-spacing: 3px;"
                     id="guest-type">FAMILIA</p>
-                <div class="guest-name" id="guest-display">CARGANDO...</div>
-                <div class="pases-badge" id="pases-display">---</div>
+                <div class="guest-name" id="guest-display" style="font-size: 2.2rem; color: var(--accent-blue);">
+                    CARGANDO...</div>
+                <div class="pases-badge" id="pases-display"
+                    style="background: var(--accent-blue); font-size: 1.1rem; padding: 12px 40px;">---</div>
             </div>
-            <p style="font-size: 0.85rem; letter-spacing: 1px;">SE AGRADECE LA COMPRENSIÓN, ESTE EVENTO ES PARA ADULTOS
-            </p>
+            <p style="font-size: 0.8rem; letter-spacing: 2px; opacity: 0.8;">SE AGRADECE LA COMPRENSIÓN, ESTE EVENTO ES
+                PARA ADULTOS</p>
         </section>
 
         <!-- GIFTS & ALBUM -->
@@ -647,13 +713,11 @@
         </section>
 
         <!-- FOOTER -->
-        <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/15-08-01-26-_8176-IRIS-NANCY-RDZ-4735.png"
-            class="footer-image" alt="Regina Footer">
-        <div class="footer-banner">
+        <div class="frame-starry" style="padding: 80px 20px;">
             <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/nombre-8176-regina.png"
-                style="max-width: 60%; opacity: 0.8;" alt="Regina Small">
-            <p style="color: white; font-size: 0.7rem; margin-top: 20px; opacity: 0.5; letter-spacing: 2px;">ANGEL FOTO
-                INVITACIONES</p>
+                style="max-width: 70%; opacity: 0.9;">
+            <p style="font-size: 0.7rem; letter-spacing: 4px; opacity: 0.4; margin-top: 30px;">ANGEL FOTO INVITACIONES
+            </p>
         </div>
     </div>
 
@@ -697,6 +761,32 @@
             document.getElementById('audioToggle').innerText = "🎵";
         }
 
+        // Gallery
+        const galleryImages = [
+            "https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/3-08-01-26-_8176-IRIS-NANCY-RDZ-4756.png",
+            "https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/4-08-01-26-_8176-IRIS-NANCY-RDZ-4775.png",
+            "https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/5-08-01-26-_8176-IRIS-NANCY-RDZ-4694.png",
+            "https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/6-08-01-26-_8176-IRIS-NANCY-RDZ-4681.png",
+            "https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/7-08-01-26-_8176-IRIS-NANCY-RDZ-4664.png",
+            "https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/8-08-01-26-_8176-IRIS-NANCY-RDZ-4731.png"
+        ];
+
+        const galleryContainer = document.getElementById('photoGallery');
+        galleryImages.forEach((src, idx) => {
+            const slide = document.createElement('div');
+            slide.className = 'carousel-slide' + (idx === 0 ? ' active' : '');
+            slide.style.backgroundImage = `url('${src}')`;
+            galleryContainer.appendChild(slide);
+        });
+
+        let currentSlide = 0;
+        setInterval(() => {
+            const slides = document.querySelectorAll('.carousel-slide');
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 4000);
+
         async function init() {
             let invitados = [];
             try {
@@ -715,7 +805,7 @@
                     document.getElementById('guest-display').innerText = guest.name;
                     document.getElementById('pases-display').innerText = guest.pases_text;
                     document.getElementById('form-name').value = guest.name;
-                    document.getElementById('guest-type').innerText = guest.is_personal ? "PERSONAL" : "FAMILIA/AMIGOS";
+                    document.getElementById('guest-type').innerText = guest.is_personal ? "PASE PERSONAL" : "PASA FAMILIAR";
                 }
             } else {
                 document.getElementById('guest-display').innerText = "FAMILIA Y AMIGOS";
@@ -726,16 +816,8 @@
 
         function enviarConfirmacion() {
             const name = document.getElementById('form-name').value;
-            const phone = document.getElementById('form-phone').value;
-            const att = document.getElementById('form-attendance').value;
             const pases = document.getElementById('pases-display').innerText;
-
-            if (!phone) {
-                alert("Por favor ingresa tu WhatsApp de contacto");
-                return;
-            }
-
-            const msg = `Hola! Soy ${name}. Confirmo mi asistencia para los XV de Regina (${att}). Mi pase es: ${pases}. Contacto: ${phone}`;
+            const msg = `Hola! Soy ${name}. Confirmo mi asistencia para los XV de Regina. Mi pase es: ${pases}.`;
             const waUrl = `https://wa.me/528182064610?text=${encodeURIComponent(msg)}`;
             window.open(waUrl, '_blank');
         }
