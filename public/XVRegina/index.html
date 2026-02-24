@@ -13,9 +13,10 @@
 
     <style>
         :root {
-            --primary-bg: #bceeff;
+            --primary-bg: #e3f2fd;
             --secondary-bg: #ffffff;
             --accent-blue: #1a5163;
+            --light-blue-celeste: #b3e5fc;
             --text-main: #415c75;
             --text-heading: #1a5163;
             --silver-texture: url('https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2025/09/fondo-de-textura-de-papel-metalico-plateado-1.jpg');
@@ -107,9 +108,17 @@
         }
 
         @keyframes pulse-animation {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
         .btn-open:hover {
@@ -123,7 +132,8 @@
             background: white;
             box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
             position: relative;
-            display: none; /* Hidden until cover is opened */
+            display: none;
+            /* Hidden until cover is opened */
         }
 
         .main-container.visible {
@@ -164,7 +174,7 @@
 
         .title-img {
             max-width: 100%;
-            width: 400px; /* Bigger name */
+            width: 400px;
             margin-top: 20px;
             filter: drop-shadow(0 0 15px rgba(0, 150, 255, 0.8));
         }
@@ -172,61 +182,70 @@
         .date-img {
             max-width: 80%;
             margin-top: 20px;
-            background: rgba(255, 255, 255, 0.4); /* Better visibility */
+            background: rgba(255, 255, 255, 0.4);
             padding: 10px;
             border-radius: 10px;
             backdrop-filter: blur(5px);
         }
 
-        /* Countdown */
+        /* Countdown - Larger */
         .countdown-container {
-            padding: 30px 20px;
+            padding: 50px 20px;
             background: white;
             text-align: center;
         }
 
         .countdown-title {
             font-family: 'Aboreto', sans-serif;
-            font-size: 0.9rem;
-            letter-spacing: 4px;
+            font-size: 1.2rem;
+            letter-spacing: 6px;
             color: var(--accent-blue);
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         .timer {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
         }
 
         .time-block {
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-width: 60px;
+            min-width: 80px;
         }
 
         .time-number {
-            font-size: 2rem;
+            font-size: 3.5rem;
+            /* Larger */
             font-weight: bold;
             color: var(--accent-blue);
             line-height: 1;
+            font-family: 'Rosarivo', serif;
         }
 
         .time-label {
-            font-size: 0.7rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #888;
-            margin-top: 5px;
+            letter-spacing: 2px;
+            color: #777;
+            margin-top: 10px;
         }
 
         /* Content Sections */
         .section {
-            padding: 50px 30px;
+            padding: 60px 30px;
             text-align: center;
             background: white;
             position: relative;
+        }
+
+        .section-prayer {
+            background-color: #e1f5fe;
+            /* Beautiful Celeste */
+            border-top: 2px solid #b3e5fc;
+            border-bottom: 2px solid #b3e5fc;
         }
 
         .section-silver {
@@ -249,27 +268,40 @@
 
         .prayer {
             font-style: italic;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             margin: 20px 0;
-            color: #444;
-            font-family: 'Arizonia', cursive;
+            color: #2c4a63;
+            font-family: 'Rosarivo', serif;
+            line-height: 1.8;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         h2 {
             font-family: 'Aboreto', sans-serif;
             color: var(--text-heading);
-            font-size: 1.4rem;
-            margin-bottom: 15px;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+        }
+
+        h3 {
+            font-family: 'Aboreto', sans-serif;
+            color: #666;
+            font-size: 0.9rem;
             letter-spacing: 3px;
+            margin-bottom: 10px;
         }
 
         .info-card {
-            background: rgba(255, 255, 255, 0.85);
-            padding: 30px 20px;
-            border-radius: 10px;
-            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 35px 25px;
+            border-radius: 15px;
+            margin: 30px 0;
             backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
         /* Pases Card */
@@ -316,7 +348,7 @@
             letter-spacing: 2px;
         }
 
-        /* Form */
+        /* Form & Buttons */
         .form-group {
             margin-bottom: 20px;
             text-align: left;
@@ -350,13 +382,32 @@
             border-radius: 50px;
             cursor: pointer;
             letter-spacing: 2px;
-            transition: transform 0.2s;
+            transition: all 0.3s;
             margin-top: 10px;
             box-shadow: 0 5px 15px rgba(26, 81, 99, 0.3);
+            text-decoration: none;
+            display: inline-block;
         }
 
-        .btn-action:active {
-            transform: scale(0.98);
+        .btn-action:hover {
+            background: #21667d;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: white;
+            color: var(--accent-blue);
+            border: 2px solid var(--accent-blue);
+            padding: 15px 30px;
+            font-family: 'Aboreto', sans-serif;
+            font-size: 0.9rem;
+            border-radius: 50px;
+            cursor: pointer;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
         }
 
         /* Audio Control */
@@ -369,7 +420,7 @@
             width: 55px;
             height: 55px;
             border-radius: 50%;
-            display: none; /* Hidden until open */
+            display: none;
             justify-content: center;
             align-items: center;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
@@ -381,7 +432,7 @@
         .footer-banner {
             background-image: var(--celestial-bg);
             background-size: cover;
-            padding: 40px 20px;
+            padding: 60px 20px;
             text-align: center;
         }
 
@@ -390,15 +441,34 @@
             display: block;
         }
 
+        .icon-img {
+            width: 60px;
+            margin-bottom: 15px;
+        }
+
+        .qr-placeholder {
+            width: 150px;
+            height: 150px;
+            margin: 20px auto;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
         @media (max-width: 500px) {
-            .main-container {
-                box-shadow: none;
-            }
             .time-number {
-                font-size: 1.5rem;
+                font-size: 2.5rem;
             }
+
             .time-block {
-                min-width: 50px;
+                min-width: 60px;
+            }
+
+            .prayer {
+                font-size: 1rem;
             }
         }
     </style>
@@ -409,9 +479,13 @@
     <!-- COVER PAGE -->
     <div id="cover-page">
         <div class="cover-content">
-            <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/nombre-8176-regina.png" alt="XV REGINA" class="cover-name">
-            <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/fecha-8176-regina.png" alt="27 Marzo 2026" class="cover-date">
-            <p style="font-family: 'Aboreto', sans-serif; font-size: 0.8rem; letter-spacing: 5px; margin-bottom: 20px; color: #555;">P A S E  P E R S O N A L</p>
+            <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/nombre-8176-regina.png"
+                alt="XV REGINA" class="cover-name">
+            <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/fecha-8176-regina.png"
+                alt="27 Marzo 2026" class="cover-date">
+            <p
+                style="font-family: 'Aboreto', sans-serif; font-size: 0.8rem; letter-spacing: 5px; margin-bottom: 20px; color: #555;">
+                P A S E P E R S O N A L</p>
             <button class="btn-open" onclick="openInvitation()">VER INVITACIÓN</button>
         </div>
     </div>
@@ -457,20 +531,38 @@
             </div>
         </section>
 
-        <!-- PRAYER -->
-        <section class="section section-silver">
-            <p class="prayer">"Gracias Señor por permitirme llegar a este día tan especial en mi vida, por mi familia y
-                mis amigos."</p>
+        <!-- PRAYER (FULL VERSION) -->
+        <section class="section section-prayer">
+            <p class="prayer">
+                "Gracias señor por permitirme llegar a este día tan especial en mi vida. Estoy aquí contigo acompañada
+                de mis padres y familiares por medio de los cuales aprendí a conocerte y amarte, llena de ilusiones y
+                alegrías empiezo hoy una nueva etapa en mi vida. Señor solo te pido que me des el arma poderosa del amor
+                para luchar en nombre de todo lo que pueda alejarme de ti y así poder disfrutar de esta hermosa etapa de
+                mi vida."
+            </p>
+        </section>
+
+        <!-- PARENTS -->
+        <section class="section">
+            <div class="info-card" style="margin-top:0;">
+                <h3 style="margin-bottom:20px;">MIS PADRES</h3>
+                <p style="font-size: 1.4rem; font-weight: bold; color: var(--accent-blue); letter-spacing: 2px;">LUIS
+                    CARLOS GARZA</p>
+                <p style="font-size: 1.4rem; font-weight: bold; color: var(--accent-blue); letter-spacing: 2px;">IRIS
+                    NANCY RODRÍGUEZ</p>
+            </div>
         </section>
 
         <!-- CHURCH -->
-        <section class="section">
+        <section class="section section-silver">
+            <img src="https://angelfotoinvitaciones.mx/wp-content/uploads/2025/08/iglesia-celeste-scaled.jpg"
+                class="icon-img" alt="Church icon">
             <h2>CEREMONIA RELIGIOSA</h2>
             <div class="info-card">
-                <p><strong>CATEDRAL METROPOLITANA</strong></p>
-                <p>18:00 HORAS</p>
-                <button class="btn-action" style="background:#4b8fa6; margin-top:20px;"
-                    onclick="window.open('https://maps.app.goo.gl/YyQ5L5m8J8s5h9r47')">VER MAPA</button>
+                <p><strong>PARROQUIA NUESTRA SEÑORA DE GUADALUPE</strong></p>
+                <p>17:30 HORAS</p>
+                <a href="https://maps.app.goo.gl/YyQ5L5m8J8s5h9r47" target="_blank" class="btn-action"
+                    style="background:#4b8fa6; margin-top:20px;">VER UBICACIÓN</a>
             </div>
         </section>
 
@@ -480,13 +572,26 @@
 
         <!-- RECEPTION -->
         <section class="section">
+            <img src="https://angelfotoinvitaciones.mx/wp-content/uploads/2025/08/copas-celestes-scaled.jpg"
+                class="icon-img" alt="Brindis icon">
             <h2>RECEPCIÓN</h2>
             <div class="info-card">
-                <p><strong>HACIENDA SAN PEDRO</strong></p>
-                <p>20:30 HORAS</p>
-                <button class="btn-action" style="background:#4b8fa6; margin-top:20px;"
-                    onclick="window.open('https://maps.app.goo.gl/Z8m9B5P7Y9C2D4N67')">VER MAPA</button>
+                <p><strong>LA GALERÍA EVENTOS</strong></p>
+                <p>(SALÓN PICASSO)</p>
+                <p>20:00 HORAS</p>
+                <a href="https://maps.app.goo.gl/Z8m9B5P7Y9C2D4N67" target="_blank" class="btn-action"
+                    style="background:#4b8fa6; margin-top:20px;">VER UBICACIÓN</a>
             </div>
+        </section>
+
+        <!-- DRESS CODE -->
+        <section class="section section-silver">
+            <img src="https://angelfotoinvitaciones.mx/wp-content/uploads/2025/08/vestido-celeste-scaled.jpg"
+                class="icon-img" alt="Dress icon">
+            <h2>CÓDIGO DE VESTIMENTA</h2>
+            <p>FORMAL</p>
+            <p style="font-size: 0.8rem; color: #888; margin-top:10px;">COLORES RESERVADOS PARA LA QUINCEAÑERA: CELESTE
+            </p>
         </section>
 
         <!-- PASES -->
@@ -501,8 +606,27 @@
             </p>
         </section>
 
+        <!-- GIFTS & ALBUM -->
+        <section class="section">
+            <img src="https://angelfotoinvitaciones.mx/wp-content/uploads/2025/08/regalo-celeste-scaled.jpg"
+                class="icon-img" alt="Gift icon">
+            <h2>LLUVIA DE SOBRES</h2>
+            <p style="max-width: 80%; margin: 0 auto;">"Tu compañía es lo más importante para mí, pero si deseas darme
+                un obsequio, esta es mi sugerencia."</p>
+
+            <div style="margin-top:40px;">
+                <h3>VER ÁLBUM DE FOTOS</h3>
+                <div class="qr-placeholder" id="qr-container">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://web.dotstheapp.com/a?group=2379408%26dlBy=carlos1245%26code=Y9zQhQoronD2"
+                        alt="QR Album" style="width:100%; height:100%; padding:10px;">
+                </div>
+                <a href="https://web.dotstheapp.com/a?group=2379408&dlBy=carlos1245&code=Y9zQhQoronD2" target="_blank"
+                    class="btn-outline">VER ÁLBUM COMPLETO</a>
+            </div>
+        </section>
+
         <!-- RSVP -->
-        <section class="section" id="rsvp">
+        <section class="section section-silver" id="rsvp">
             <h2>CONFIRMACIÓN</h2>
             <div class="form-group">
                 <label>NOMBRE DEL INVITADO</label>
@@ -528,14 +652,16 @@
         <div class="footer-banner">
             <img src="https://i0.wp.com/angelfotoinvitaciones.mx/wp-content/uploads/2026/02/nombre-8176-regina.png"
                 style="max-width: 60%; opacity: 0.8;" alt="Regina Small">
+            <p style="color: white; font-size: 0.7rem; margin-top: 20px; opacity: 0.5; letter-spacing: 2px;">ANGEL FOTO
+                INVITACIONES</p>
         </div>
     </div>
 
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        // Target Date: March 27, 2026, 18:00
-        const targetDate = new Date('March 27, 2026 18:00:00').getTime();
+        // Target Date: March 27, 2026, 17:30 (Subtracted 30 min from 18:00)
+        const targetDate = new Date('March 27, 2026 17:30:00').getTime();
 
         function updateCountdown() {
             const now = new Date().getTime();
@@ -564,8 +690,7 @@
             document.getElementById('cover-page').classList.add('hidden');
             document.getElementById('invitationContent').classList.add('visible');
             document.getElementById('audioToggle').style.display = 'flex';
-            
-            // Try to play music automatically
+
             const audio = document.getElementById('bgMusic');
             audio.play().catch(e => console.log("Auto-play prevented"));
             playing = true;
@@ -590,7 +715,7 @@
                     document.getElementById('guest-display').innerText = guest.name;
                     document.getElementById('pases-display').innerText = guest.pases_text;
                     document.getElementById('form-name').value = guest.name;
-                    document.getElementById('guest-type').innerText = guest.is_personal ? "PERSONAL" : "FAMILIA";
+                    document.getElementById('guest-type').innerText = guest.is_personal ? "PERSONAL" : "FAMILIA/AMIGOS";
                 }
             } else {
                 document.getElementById('guest-display').innerText = "FAMILIA Y AMIGOS";
@@ -611,7 +736,7 @@
             }
 
             const msg = `Hola! Soy ${name}. Confirmo mi asistencia para los XV de Regina (${att}). Mi pase es: ${pases}. Contacto: ${phone}`;
-            const waUrl = `https://wa.me/528182064610?text=${encodeURIComponent(msg)}`; 
+            const waUrl = `https://wa.me/528182064610?text=${encodeURIComponent(msg)}`;
             window.open(waUrl, '_blank');
         }
 
