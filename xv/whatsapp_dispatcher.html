@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despachador de Invitaciones - XV Regina</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background: #f0f2f5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #1a5163;
+            text-align: center;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .guest-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .guest-info {
+            flex: 1;
+        }
+
+        .guest-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .guest-pases {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .btn-send {
+            background: #25d366;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn-send:hover {
+            background: #128c7e;
+        }
+
+        .btn-send.sent {
+            background: #ccc;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Despachador de WhatsApp</h1>
+        <p style="text-align: center; color: #666;">Haz clic en el botón para abrir WhatsApp con el mensaje
+            personalizado.</p>
+
+        <div class="stats" id="stats">
+            <div>Invitados: <span id="total-guests">0</span></div>
+            <div>Enviados: <span id="total-sent">0</span></div>
+        </div>
+
+        <input type="text" id="searchInput" placeholder="Buscar invitado..." onkeyup="filterGuests()">
+        <input type="text" id="baseUrlInput" placeholder="URL Base de la invitación (ej: https://regina-xv.netlify.app)"
+            onchange="updateLinks()">
+
+        <div id="guest-list">
+            <!-- Cargando... -->
+        </div>
+    </div>
+
+    <script>
+        let guests = [];
+        let sentCount = 0;
+        let baseUrl = "https://tu-dominio.com"; // El usuario debe cambiar esto
+
+        async function loadGuests() {
+            try {
+                const resp = await fetch('invitados.json');
+                guests = await resp.json();
+                document.getElementById('total-guests').innerText = guests.length;
+                renderGuests();
+            } catch (e) {
+                alert("Error cargando invitados.json. Asegúrate de que el archivo exista en el mismo folder.");
+            }
+        }
+
+        function renderGuests() {
+            const list = document.getElementById('guest-list');
+            list.innerHTML = '';
+            guests.forEach(g => {
+                const row = document.createElement('div');
+                row.className = 'guest-row';
+                row.innerHTML = `
+                    <div class="guest-info">
+                        <div class="guest-name">${g.name}</div>
+                        <div class="guest-pases">${g.pases_text}</div>
+                    </div>
+                    <button class="btn-send" onclick="sendInvite(${g.id}, '${g.name.replace(/'/g, "\\'")}', '${g.pases_text}')">Enviar WhatsApp</button>
+                `;
+                list.appendChild(row);
+            });
+        }
+
+        function sendInvite(id, name, pases) {
+            const url = `${baseUrl}/index.html?id=${id}`;
+            const msg = `¡Hola ${name}! 🌸 Te enviamos con mucho cariño la invitación digital para los XV años de Regina. Tu pase es: ${pases}. \n\nVer invitación aquí: ${url}`;
+            const waUrl = `https://wa.me/?text=${encodeURIComponent(msg)}`;
+            window.open(waUrl, '_blank');
+
+            // Mark as sent visually (simplified)
+            event.target.classList.add('sent');
+            event.target.innerText = 'Enviado ✔';
+
+            // Note: Genuine tracking would require a backend or localStorage persistence
+        }
+
+        function filterGuests() {
+            const val = document.getElementById('searchInput').value.toLowerCase();
+            const rows = document.querySelectorAll('.guest-row');
+            rows.forEach(row => {
+                const name = row.querySelector('.guest-name').innerText.toLowerCase();
+                row.style.display = name.includes(val) ? 'flex' : 'none';
+            });
+        }
+
+        function updateLinks() {
+            baseUrl = document.getElementById('baseUrlInput').value.replace(/\/$/, "");
+        }
+
+        window.onload = loadGuests;
+    </script>
+</body>
+
+</html>
