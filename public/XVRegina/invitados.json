@@ -37,7 +37,7 @@
     },
     {
         "id": 5,
-        "name": "KARY RDZ",
+        "name": "HECTOR GARZA",
         "adults": 3,
         "minors": 0,
         "total": 3,
@@ -55,7 +55,7 @@
     },
     {
         "id": 7,
-        "name": "JAIME",
+        "name": "JAIME RODRIGUEZ AGUIRRE",
         "adults": 4,
         "minors": 0,
         "total": 4,
@@ -64,7 +64,7 @@
     },
     {
         "id": 8,
-        "name": "CECY",
+        "name": "CECILIA RODRIGUEZ AGUIRRE",
         "adults": 3,
         "minors": 1,
         "total": 4,
@@ -316,7 +316,7 @@
     },
     {
         "id": 36,
-        "name": "BLANCA",
+        "name": "BLANCA ESPARZA",
         "adults": 1,
         "minors": 0,
         "total": 1,
