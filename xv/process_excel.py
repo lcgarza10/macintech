@@ -4,8 +4,8 @@ import os
 import shutil
 
 def process_invitados(file_path):
-    # Read without headers since the Excel has no header row
-    df = pd.read_excel(file_path, header=None)
+    # Read without headers, only first 3 columns (ignore notes/comments)
+    df = pd.read_excel(file_path, header=None, usecols=[0, 1, 2])
     df.columns = ['NOMBRE', 'ADULTOS', 'MENORES']
     
     invitados_list = []
