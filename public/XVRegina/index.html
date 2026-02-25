@@ -1035,9 +1035,6 @@
             setTimeout(() => {
                 btn.textContent = '✓ ENVIADO';
                 btn.style.background = '#4CAF50';
-                // Also open WhatsApp
-                const txt = `Hola! Soy ${name}. ${att === 'SÍ' ? 'Confirmo mi asistencia' : 'No podré asistir'} a los XV de Regina. ${pases}. Tel: ${phone}. ${msg}`;
-                window.open(`https://wa.me/528182064610?text=${encodeURIComponent(txt)}`, '_blank');
             }, 1500);
         }
 
