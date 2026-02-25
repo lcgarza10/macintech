@@ -881,12 +881,12 @@
             <div class="form-group">
                 <label>ASISTIRÉ</label>
                 <div class="attend-toggle">
-                    <button type="button" class="attend-btn active" data-value="SÍ" onclick="selectAttend(this)">SÍ
+                    <button type="button" class="attend-btn" data-value="SÍ" onclick="selectAttend(this)">SÍ
                         ASISTIRÉ</button>
                     <button type="button" class="attend-btn" data-value="NO" onclick="selectAttend(this)">NO
                         ASISTIRÉ</button>
                 </div>
-                <input type="hidden" name="attend" id="attend-value" value="SÍ">
+                <input type="hidden" name="attend" id="attend-value" value="">
             </div>
             <div class="form-group">
                 <label>MENSAJE ( OPCIONAL )</label>
@@ -988,6 +988,12 @@
             const msg = document.getElementById('form-msg').value;
             const pases = document.getElementById('pases-display').textContent;
             const id = new URLSearchParams(location.search).get('id') || '0';
+
+            // Validate attendance is selected
+            if (!att) {
+                alert('Por favor selecciona si asistirás o no');
+                return;
+            }
 
             const btn = document.querySelector('.btn-enviar');
             btn.textContent = 'ENVIANDO...';
