@@ -966,7 +966,7 @@
                 const g = inv.find(x => x.id == id);
                 if (g) {
                     document.getElementById('guest-display').textContent = g.name;
-                    const asistencia = g.total === 1 ? 'Se confirmó 1 asistencia' : `Se confirmó ${g.total} asistencias`;
+                    const asistencia = g.total === 1 ? 'Pase para 1 persona' : `Pase para ${g.total} personas`;
                     document.getElementById('pases-display').textContent = asistencia;
                 }
             } else {
