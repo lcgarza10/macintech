@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Despacho WhatsApp - XV Regina</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,159 +14,260 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #1a1a2e;
-            color: #eee;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f0f1a;
+            color: #e0e0e0;
             padding: 20px;
+            min-height: 100vh;
         }
 
         h1 {
             text-align: center;
-            color: #6bb8d4;
+            background: linear-gradient(135deg, #6bb8d4, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 5px;
-            font-size: 1.8rem;
+            font-size: 2rem;
+            font-weight: 700;
         }
 
         .subtitle {
             text-align: center;
-            color: #888;
-            margin-bottom: 20px;
-            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
         }
 
+        /* ===== STATS ===== */
         .stats {
             display: flex;
-            gap: 15px;
+            gap: 12px;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             flex-wrap: wrap;
         }
 
         .stat-box {
-            background: #16213e;
-            border: 1px solid #333;
-            border-radius: 10px;
-            padding: 15px 25px;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border: 1px solid rgba(107, 184, 212, 0.15);
+            border-radius: 14px;
+            padding: 18px 28px;
             text-align: center;
+            min-width: 110px;
+            transition: transform 0.2s, border-color 0.3s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-2px);
+            border-color: rgba(107, 184, 212, 0.4);
         }
 
         .stat-num {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #6bb8d4;
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #6bb8d4, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .stat-label {
-            font-size: 0.75rem;
-            color: #888;
+            font-size: 0.7rem;
+            color: #666;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            margin-top: 4px;
         }
 
+        /* ===== CONFIG PANEL ===== */
         .config {
-            background: #16213e;
-            border: 1px solid #333;
-            border-radius: 10px;
-            padding: 20px;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border: 1px solid rgba(107, 184, 212, 0.12);
+            border-radius: 14px;
+            padding: 22px;
             margin-bottom: 20px;
         }
 
         .config label {
             display: block;
             color: #6bb8d4;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
+            letter-spacing: 1.5px;
+            margin-bottom: 6px;
+            font-weight: 600;
         }
 
         .config textarea {
             width: 100%;
-            background: #0f3460;
-            border: 1px solid #444;
-            border-radius: 8px;
-            color: #eee;
-            padding: 12px;
-            font-size: 0.95rem;
+            background: rgba(15, 52, 96, 0.5);
+            border: 1px solid rgba(107, 184, 212, 0.2);
+            border-radius: 10px;
+            color: #e0e0e0;
+            padding: 14px;
+            font-size: 0.92rem;
             line-height: 1.6;
             resize: vertical;
             min-height: 100px;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .config textarea:focus {
+            outline: none;
+            border-color: #6bb8d4;
         }
 
         .config .hint {
-            color: #666;
-            font-size: 0.75rem;
-            margin-top: 5px;
-        }
-
-        .config input[text] {
-            width: 100%;
-            background: #0f3460;
-            border: 1px solid #444;
-            border-radius: 8px;
-            color: #eee;
-            padding: 10px;
-            font-size: 0.95rem;
+            color: #555;
+            font-size: 0.72rem;
+            margin-top: 6px;
         }
 
         .domain-input {
             width: 100%;
-            background: #0f3460;
-            border: 1px solid #444;
-            border-radius: 8px;
-            color: #eee;
-            padding: 10px;
-            font-size: 0.95rem;
-            margin-bottom: 10px;
+            background: rgba(15, 52, 96, 0.5);
+            border: 1px solid rgba(107, 184, 212, 0.2);
+            border-radius: 10px;
+            color: #e0e0e0;
+            padding: 12px 14px;
+            font-size: 0.92rem;
+            margin-bottom: 12px;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s;
         }
 
+        .domain-input:focus {
+            outline: none;
+            border-color: #6bb8d4;
+        }
+
+        /* ===== API STATUS ===== */
+        .api-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.72rem;
+            padding: 5px 14px;
+            border-radius: 20px;
+            margin-left: 10px;
+        }
+
+        .api-status.connected {
+            color: #4CAF50;
+            background: rgba(76, 175, 80, 0.1);
+        }
+
+        .api-status.disconnected {
+            color: #ef4444;
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        .api-status.saving {
+            color: #ff9800;
+            background: rgba(255, 152, 0, 0.1);
+        }
+
+        .api-status .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .api-status.connected .dot {
+            background: #4CAF50;
+        }
+
+        .api-status.disconnected .dot {
+            background: #ef4444;
+        }
+
+        .api-status.saving .dot {
+            background: #ff9800;
+            animation: pulse-dot 0.8s infinite;
+        }
+
+        @keyframes pulse-dot {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        /* ===== SEARCH ===== */
         .search-bar {
             width: 100%;
-            padding: 12px 15px;
-            background: #16213e;
-            border: 1px solid #333;
-            border-radius: 10px;
-            color: #eee;
-            font-size: 1rem;
+            padding: 14px 18px;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border: 1px solid rgba(107, 184, 212, 0.15);
+            border-radius: 12px;
+            color: #e0e0e0;
+            font-size: 0.95rem;
             margin-bottom: 15px;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .search-bar:focus {
+            outline: none;
+            border-color: #6bb8d4;
         }
 
         .search-bar::placeholder {
-            color: #555;
+            color: #444;
+        }
+
+        /* ===== TABLE ===== */
+        .table-wrapper {
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(107, 184, 212, 0.1);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            background: #16213e;
-            border-radius: 10px;
-            overflow: hidden;
+            background: #13132a;
         }
 
         th {
-            background: #0f3460;
+            background: linear-gradient(135deg, #0f3460, #1a2a50);
             color: #6bb8d4;
-            padding: 12px 10px;
+            padding: 14px 12px;
             text-align: left;
-            font-size: 0.8rem;
+            font-size: 0.72rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             position: sticky;
             top: 0;
+            z-index: 10;
+            font-weight: 600;
         }
 
         td {
-            padding: 10px;
-            border-bottom: 1px solid #222;
-            font-size: 0.9rem;
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 0.88rem;
+        }
+
+        tr {
+            transition: background 0.2s;
         }
 
         tr:hover {
-            background: #1a2a4a;
+            background: rgba(107, 184, 212, 0.05);
         }
 
         tr.sent {
-            opacity: 0.5;
+            opacity: 0.45;
         }
 
         tr.sent td:first-child::after {
@@ -173,91 +275,363 @@
             color: #4CAF50;
         }
 
+        /* ===== EDITABLE INPUTS ===== */
+        .edit-input {
+            background: rgba(15, 52, 96, 0.4);
+            border: 1px solid rgba(107, 184, 212, 0.25);
+            border-radius: 8px;
+            color: #e0e0e0;
+            padding: 7px 10px;
+            font-size: 0.85rem;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            width: 100%;
+        }
+
+        .edit-input:focus {
+            outline: none;
+            border-color: #6bb8d4;
+            box-shadow: 0 0 0 3px rgba(107, 184, 212, 0.15);
+        }
+
+        .edit-input.name-input {
+            min-width: 160px;
+            font-weight: 500;
+        }
+
+        .edit-input.passes-input {
+            width: 65px;
+            text-align: center;
+        }
+
+        .phone-input {
+            background: rgba(15, 52, 96, 0.4);
+            border: 1px solid rgba(107, 184, 212, 0.2);
+            border-radius: 8px;
+            color: #e0e0e0;
+            padding: 7px 10px;
+            width: 120px;
+            font-size: 0.85rem;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .phone-input:focus {
+            outline: none;
+            border-color: #6bb8d4;
+        }
+
+        /* ===== BUTTONS ===== */
         .btn-wa {
-            background: #25D366;
+            background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
             border: none;
-            padding: 8px 16px;
-            border-radius: 20px;
+            padding: 8px 18px;
+            border-radius: 22px;
             cursor: pointer;
-            font-size: 0.8rem;
-            font-weight: bold;
+            font-size: 0.78rem;
+            font-weight: 600;
             white-space: nowrap;
-            transition: all 0.2s;
+            transition: all 0.25s;
+            font-family: 'Inter', sans-serif;
         }
 
         .btn-wa:hover {
-            background: #128C7E;
             transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         }
 
         .btn-wa.sent {
-            background: #555;
+            background: #333;
             cursor: default;
+            box-shadow: none;
         }
 
         .btn-copy {
-            background: #444;
-            color: #ccc;
+            background: rgba(255, 255, 255, 0.06);
+            color: #888;
             border: none;
             padding: 6px 12px;
             border-radius: 15px;
             cursor: pointer;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             margin-left: 5px;
+            transition: all 0.2s;
         }
 
         .btn-copy:hover {
-            background: #666;
+            background: rgba(255, 255, 255, 0.12);
+            color: #ccc;
         }
 
         .link-text {
-            color: #6bb8d4;
-            font-size: 0.75rem;
+            color: #5a9db8;
+            font-size: 0.72rem;
             word-break: break-all;
         }
 
-        .phone-input {
-            background: #0f3460;
-            border: 1px solid #444;
-            border-radius: 5px;
-            color: #eee;
-            padding: 6px 8px;
-            width: 120px;
-            font-size: 0.85rem;
+        .btn-delete {
+            background: none;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #ef4444;
+            padding: 6px 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: all 0.2s;
+            opacity: 0.5;
         }
 
+        .btn-delete:hover {
+            background: rgba(239, 68, 68, 0.1);
+            opacity: 1;
+            border-color: #ef4444;
+        }
+
+        /* ===== ACTIONS BAR ===== */
         .actions-top {
             display: flex;
             gap: 10px;
             margin-bottom: 15px;
             flex-wrap: wrap;
+            align-items: center;
         }
 
         .btn-action {
-            background: #0f3460;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
             color: #6bb8d4;
-            border: 1px solid #333;
-            padding: 10px 20px;
-            border-radius: 8px;
+            border: 1px solid rgba(107, 184, 212, 0.2);
+            padding: 11px 22px;
+            border-radius: 10px;
             cursor: pointer;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            transition: all 0.25s;
         }
 
         .btn-action:hover {
-            background: #1a4a7a;
+            background: linear-gradient(135deg, #1e2a4a, #1a3460);
+            border-color: rgba(107, 184, 212, 0.4);
+            transform: translateY(-1px);
+        }
+
+        .btn-action.primary {
+            background: linear-gradient(135deg, #6bb8d4, #5aa5c2);
+            color: #fff;
+            border: none;
+            font-weight: 600;
+        }
+
+        .btn-action.primary:hover {
+            box-shadow: 0 4px 20px rgba(107, 184, 212, 0.3);
+        }
+
+        .btn-action.add {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: #fff;
+            border: none;
+            font-weight: 600;
+        }
+
+        .btn-action.add:hover {
+            box-shadow: 0 4px 20px rgba(34, 197, 94, 0.3);
+        }
+
+        /* ===== TOAST ===== */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: linear-gradient(135deg, #1a2a4a, #16213e);
+            color: #e0e0e0;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-size: 0.88rem;
+            border: 1px solid rgba(107, 184, 212, 0.3);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            pointer-events: none;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* ===== ADD GUEST MODAL ===== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-overlay.show {
+            display: flex;
+        }
+
+        .modal {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border: 1px solid rgba(107, 184, 212, 0.2);
+            border-radius: 18px;
+            padding: 30px;
+            width: 90%;
+            max-width: 420px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal h2 {
+            color: #6bb8d4;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .modal .form-group {
+            margin-bottom: 16px;
+        }
+
+        .modal label {
+            display: block;
+            color: #888;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .modal input {
+            width: 100%;
+            background: rgba(15, 52, 96, 0.5);
+            border: 1px solid rgba(107, 184, 212, 0.2);
+            border-radius: 10px;
+            color: #e0e0e0;
+            padding: 12px 14px;
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .modal input:focus {
+            outline: none;
+            border-color: #6bb8d4;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 24px;
+            justify-content: flex-end;
+        }
+
+        .modal-actions button {
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .modal-actions .btn-cancel {
+            background: rgba(255, 255, 255, 0.06);
+            color: #888;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .modal-actions .btn-cancel:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .modal-actions .btn-save {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: #fff;
+            border: none;
+        }
+
+        .modal-actions .btn-save:hover {
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 12px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .stat-box {
+                padding: 14px 18px;
+                min-width: 90px;
+            }
+
+            .stat-num {
+                font-size: 1.7rem;
+            }
+
+            td,
+            th {
+                padding: 8px 6px;
+                font-size: 0.78rem;
+            }
+
+            .edit-input.name-input {
+                min-width: 120px;
+            }
+
+            .edit-input.passes-input {
+                width: 50px;
+            }
+
+            .phone-input {
+                width: 95px;
+            }
+
+            .link-text {
+                display: none;
+            }
+
+            .btn-action {
+                padding: 9px 15px;
+                font-size: 0.78rem;
+            }
         }
     </style>
 </head>
 
 <body>
     <h1>📱 Despacho WhatsApp</h1>
-    <p class="subtitle">XV Años de Regina — Envío de invitaciones personalizadas</p>
+    <p class="subtitle">XV Años de Regina — Gestión y envío de invitaciones
+        <span class="api-status disconnected" id="api-status">
+            <span class="dot"></span>
+            <span id="api-status-text">Sin API</span>
+        </span>
+    </p>
 
     <div class="stats">
         <div class="stat-box">
             <div class="stat-num" id="total-guests">0</div>
             <div class="stat-label">Invitados</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-num" id="total-passes">0</div>
+            <div class="stat-label">Total Pases</div>
         </div>
         <div class="stat-box">
             <div class="stat-num" id="total-sent">0</div>
@@ -288,42 +662,187 @@ Aquí está tu invitación personalizada:
     </div>
 
     <div class="actions-top">
+        <button class="btn-action add" onclick="openAddModal()">➕ Agregar invitado</button>
         <button class="btn-action" onclick="exportLinks()">📋 Copiar todos los links</button>
         <button class="btn-action" onclick="resetSent()">🔄 Reiniciar enviados</button>
+        <button class="btn-action" onclick="downloadJSON()" title="Descargar JSON como respaldo">💾 Backup JSON</button>
     </div>
 
     <input type="text" class="search-bar" id="search" placeholder="🔍 Buscar invitado por nombre o ID..."
         oninput="filterTable()">
 
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Pases</th>
-                <th>Teléfono</th>
-                <th>Link</th>
-                <th>Acción</th>
-            </tr>
-        </thead>
-        <tbody id="guests-body"></tbody>
-    </table>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Pases</th>
+                    <th>Teléfono</th>
+                    <th>Link</th>
+                    <th>Enviar</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="guests-body"></tbody>
+        </table>
+    </div>
+
+    <!-- Add Guest Modal -->
+    <div class="modal-overlay" id="add-modal">
+        <div class="modal">
+            <h2>➕ Nuevo invitado</h2>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" id="new-name" placeholder="Nombre del invitado">
+            </div>
+            <div class="form-group">
+                <label>Adultos</label>
+                <input type="number" id="new-adults" value="2" min="0" max="20">
+            </div>
+            <div class="form-group">
+                <label>Menores</label>
+                <input type="number" id="new-minors" value="0" min="0" max="20">
+            </div>
+            <div class="form-group">
+                <label>Teléfono (opcional)</label>
+                <input type="tel" id="new-phone" placeholder="52...">
+            </div>
+            <div class="modal-actions">
+                <button class="btn-cancel" onclick="closeAddModal()">Cancelar</button>
+                <button class="btn-save" onclick="addGuest()">Agregar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden iframe for form-based API saves -->
+    <iframe id="save_iframe" name="save_iframe" style="display:none;"></iframe>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
 
     <script>
+        // ============================================================
+        // 🔧 CONFIGURACIÓN: Pega aquí tu URL de Google Apps Script
+        // ============================================================
+        const API_URL = '';
+        // Ejemplo: const API_URL = 'https://script.google.com/macros/s/AKfycb.../exec';
+        // ============================================================
+
         let guests = [];
         let sentIds = JSON.parse(localStorage.getItem('xv_sent_ids') || '[]');
+        let saveTimeout = null;
+        let apiAvailable = false;
 
+        // ===== LOAD GUESTS =====
         async function loadGuests() {
+            // 1) Try API first
+            if (API_URL) {
+                try {
+                    setApiStatus('saving', 'Cargando...');
+                    const res = await fetch(API_URL + '?action=getGuests');
+                    const data = await res.json();
+                    if (data && Array.isArray(data) && data.length > 0) {
+                        guests = data;
+                        guests.forEach(g => { if (!g.phone) g.phone = ''; });
+                        apiAvailable = true;
+                        setApiStatus('connected', 'Conectado');
+                        renderTable();
+                        updateStats();
+                        return;
+                    }
+                } catch (e) {
+                    console.warn('API not available:', e);
+                }
+            }
+
+            // 2) Fallback: check localStorage
+            const stored = localStorage.getItem('xv_guests_edited');
+            if (stored) {
+                try {
+                    guests = JSON.parse(stored);
+                    if (guests.length > 0) {
+                        renderTable();
+                        updateStats();
+                        // If API is configured but was empty, upload local data
+                        if (API_URL) {
+                            apiAvailable = true;
+                            saveToAPI();
+                        } else {
+                            setApiStatus('disconnected', 'Modo local');
+                        }
+                        return;
+                    }
+                } catch (e) { }
+            }
+
+            // 3) Fallback: load from invitados.json
             try {
                 guests = await (await fetch('invitados.json')).json();
+                guests.forEach(g => { if (!g.phone) g.phone = ''; });
             } catch (e) {
-                alert('Error cargando invitados.json');
+                showToast('⚠️ Error cargando invitados');
+                setApiStatus('disconnected', 'Error');
                 return;
             }
+
+            // If API is configured, upload the initial data
+            if (API_URL) {
+                apiAvailable = true;
+                saveToAPI();
+            } else {
+                setApiStatus('disconnected', 'Sin API');
+            }
+
             renderTable();
             updateStats();
         }
 
+        // ===== SAVE TO API (debounced) =====
+        function scheduleSave() {
+            // Always save to localStorage as immediate backup
+            localStorage.setItem('xv_guests_edited', JSON.stringify(guests));
+
+            // Debounce API save (wait 1.5s after last change)
+            if (saveTimeout) clearTimeout(saveTimeout);
+            saveTimeout = setTimeout(() => saveToAPI(), 1500);
+        }
+
+        function saveToAPI() {
+            if (!API_URL || !apiAvailable) return;
+
+            setApiStatus('saving', 'Guardando...');
+
+            // Use hidden form + iframe to avoid CORS issues
+            const iframe = document.getElementById('save_iframe');
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = API_URL + '?action=saveGuests';
+            form.target = 'save_iframe';
+
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'data';
+            input.value = JSON.stringify(guests);
+            form.appendChild(input);
+
+            document.body.appendChild(form);
+            form.submit();
+            document.body.removeChild(form);
+
+            // Assume success after a brief delay
+            setTimeout(() => {
+                setApiStatus('connected', 'Guardado ✓');
+            }, 2000);
+        }
+
+        function setApiStatus(state, text) {
+            const el = document.getElementById('api-status');
+            el.className = 'api-status ' + state;
+            document.getElementById('api-status-text').textContent = text;
+        }
+
+        // ===== HELPERS =====
         function getLink(id) {
             const domain = document.getElementById('base-domain').value;
             return `${domain}?id=${id}`;
@@ -337,6 +856,20 @@ Aquí está tu invitación personalizada:
                 .replace(/{pases}/g, guest.pases_text);
         }
 
+        function computePasesText(adults, minors) {
+            const total = adults + minors;
+            if (total === 0) return 'POR CONFIRMAR';
+            if (adults === 0 && minors > 0) return 'PASE PERSONAL';
+            return total === 1 ? '1 PASE' : `${total} PASES`;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML.replace(/"/g, '&quot;');
+        }
+
+        // ===== RENDER TABLE =====
         function renderTable() {
             const tbody = document.getElementById('guests-body');
             tbody.innerHTML = '';
@@ -346,10 +879,17 @@ Aquí está tu invitación personalizada:
                 tr.id = `row-${g.id}`;
                 if (isSent) tr.classList.add('sent');
                 tr.innerHTML = `
-                    <td>${g.id}</td>
-                    <td><strong>${g.name}</strong></td>
-                    <td>${g.pases_text}</td>
-                    <td><input type="text" class="phone-input" id="phone-${g.id}" placeholder="52..." value="${g.phone || ''}"></td>
+                    <td style="color:#555; font-weight:600;">${g.id}</td>
+                    <td>
+                        <input type="text" class="edit-input name-input" id="name-${g.id}" value="${escapeHtml(g.name)}"
+                            onchange="updateName(${g.id})" title="Editar nombre">
+                    </td>
+                    <td>
+                        <input type="number" class="edit-input passes-input" id="passes-${g.id}" value="${g.total}" min="0" max="20"
+                            onchange="updatePasses(${g.id})" title="Editar pases">
+                        <div style="font-size:0.65rem; color:#555; margin-top:3px;">${g.pases_text}</div>
+                    </td>
+                    <td><input type="text" class="phone-input" id="phone-${g.id}" placeholder="52..." value="${g.phone || ''}" onchange="updatePhone(${g.id})"></td>
                     <td>
                         <span class="link-text">${getLink(g.id)}</span>
                         <button class="btn-copy" onclick="copyLink(${g.id})">📋</button>
@@ -359,28 +899,144 @@ Aquí está tu invitación personalizada:
                             ${isSent ? '✓ Enviado' : '📲 Enviar'}
                         </button>
                     </td>
+                    <td>
+                        <button class="btn-delete" onclick="deleteGuest(${g.id})" title="Eliminar invitado">🗑️</button>
+                    </td>
                 `;
                 tbody.appendChild(tr);
             });
         }
 
+        // ===== INLINE EDITING =====
+        function updateName(id) {
+            const guest = guests.find(g => g.id === id);
+            const newName = document.getElementById(`name-${id}`).value.trim();
+            if (newName && newName !== guest.name) {
+                guest.name = newName.toUpperCase();
+                document.getElementById(`name-${id}`).value = guest.name;
+                scheduleSave();
+                showToast(`✏️ Nombre actualizado: ${guest.name}`);
+            }
+        }
+
+        function updatePasses(id) {
+            const guest = guests.find(g => g.id === id);
+            const newTotal = parseInt(document.getElementById(`passes-${id}`).value) || 0;
+            if (newTotal !== guest.total) {
+                guest.total = newTotal;
+                guest.adults = newTotal;
+                guest.minors = 0;
+                guest.is_personal = false;
+                guest.pases_text = computePasesText(guest.adults, guest.minors);
+                scheduleSave();
+                renderTable();
+                updateStats();
+                showToast(`✏️ Pases actualizados: ${guest.name} → ${guest.pases_text}`);
+            }
+        }
+
+        function updatePhone(id) {
+            const guest = guests.find(g => g.id === id);
+            guest.phone = document.getElementById(`phone-${id}`).value.trim();
+            scheduleSave();
+        }
+
+        // ===== ADD / DELETE GUESTS =====
+        function openAddModal() {
+            document.getElementById('add-modal').classList.add('show');
+            setTimeout(() => document.getElementById('new-name').focus(), 100);
+        }
+
+        function closeAddModal() {
+            document.getElementById('add-modal').classList.remove('show');
+            document.getElementById('new-name').value = '';
+            document.getElementById('new-adults').value = '2';
+            document.getElementById('new-minors').value = '0';
+            document.getElementById('new-phone').value = '';
+        }
+
+        function addGuest() {
+            const name = document.getElementById('new-name').value.trim().toUpperCase();
+            if (!name) {
+                showToast('⚠️ El nombre es requerido');
+                return;
+            }
+
+            const adults = parseInt(document.getElementById('new-adults').value) || 0;
+            const minors = parseInt(document.getElementById('new-minors').value) || 0;
+            const phone = document.getElementById('new-phone').value.trim();
+            const total = adults + minors;
+            const maxId = guests.length > 0 ? Math.max(...guests.map(g => g.id)) : 0;
+
+            const newGuest = {
+                id: maxId + 1,
+                name,
+                adults,
+                minors,
+                total,
+                is_personal: (adults === 0 && minors > 0),
+                pases_text: computePasesText(adults, minors),
+                phone
+            };
+
+            guests.push(newGuest);
+            scheduleSave();
+            renderTable();
+            updateStats();
+            closeAddModal();
+            showToast(`✅ Agregado: ${name} (ID ${newGuest.id})`);
+        }
+
+        function deleteGuest(id) {
+            const guest = guests.find(g => g.id === id);
+            if (confirm(`¿Eliminar a "${guest.name}" (ID ${id})?`)) {
+                guests = guests.filter(g => g.id !== id);
+                scheduleSave();
+                renderTable();
+                updateStats();
+                showToast(`🗑️ Eliminado: ${guest.name}`);
+            }
+        }
+
+        // ===== DOWNLOAD JSON (backup) =====
+        function downloadJSON() {
+            const cleanGuests = guests.map(g => ({
+                id: g.id,
+                name: g.name,
+                adults: g.adults,
+                minors: g.minors,
+                total: g.total,
+                is_personal: g.is_personal,
+                pases_text: g.pases_text
+            }));
+            const json = JSON.stringify(cleanGuests, null, 4);
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'invitados.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showToast(`💾 Backup descargado (${guests.length} invitados)`);
+        }
+
+        // ===== WHATSAPP =====
         function sendWhatsApp(id) {
             const guest = guests.find(g => g.id === id);
             const phone = document.getElementById(`phone-${id}`).value.trim();
             const msg = getMessage(guest);
 
             if (phone) {
-                // Clean phone number
                 let cleanPhone = phone.replace(/[^0-9]/g, '');
                 if (cleanPhone.length === 10) cleanPhone = '52' + cleanPhone;
                 window.open(`https://wa.me/${cleanPhone}?text=${encodeURIComponent(msg)}`, '_blank');
             } else {
-                // No phone, just copy link
                 navigator.clipboard.writeText(getLink(id));
                 window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank');
             }
 
-            // Mark as sent
             if (!sentIds.includes(id)) {
                 sentIds.push(id);
                 localStorage.setItem('xv_sent_ids', JSON.stringify(sentIds));
@@ -397,6 +1053,7 @@ Aquí está tu invitación personalizada:
             navigator.clipboard.writeText(getLink(id));
             event.target.textContent = '✓';
             setTimeout(() => event.target.textContent = '📋', 1500);
+            showToast('📋 Link copiado');
         }
 
         function filterTable() {
@@ -409,6 +1066,7 @@ Aquí está tu invitación personalizada:
 
         function updateStats() {
             document.getElementById('total-guests').textContent = guests.length;
+            document.getElementById('total-passes').textContent = guests.reduce((sum, g) => sum + g.total, 0);
             document.getElementById('total-sent').textContent = sentIds.length;
             document.getElementById('total-pending').textContent = guests.length - sentIds.length;
         }
@@ -417,7 +1075,7 @@ Aquí está tu invitación personalizada:
             const domain = document.getElementById('base-domain').value;
             const lines = guests.map(g => `${g.id}\t${g.name}\t${domain}?id=${g.id}`);
             navigator.clipboard.writeText(lines.join('\n'));
-            alert(`✅ ${guests.length} links copiados al portapapeles`);
+            showToast(`📋 ${guests.length} links copiados`);
         }
 
         function resetSent() {
@@ -426,12 +1084,30 @@ Aquí está tu invitación personalizada:
                 localStorage.setItem('xv_sent_ids', '[]');
                 renderTable();
                 updateStats();
+                showToast('🔄 Conteo reiniciado');
             }
         }
 
-        // Update links when domain changes
+        // ===== TOAST =====
+        function showToast(msg) {
+            const t = document.getElementById('toast');
+            t.textContent = msg;
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 2500);
+        }
+
+        // ===== EVENT LISTENERS =====
         document.getElementById('base-domain').addEventListener('input', renderTable);
 
+        document.getElementById('add-modal').addEventListener('click', function (e) {
+            if (e.target === this) closeAddModal();
+        });
+
+        document.getElementById('new-name').addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') addGuest();
+        });
+
+        // Start
         loadGuests();
     </script>
 </body>

@@ -957,10 +957,35 @@
             slides[si].classList.add('active');
         }, 4000);
 
-        // Guest loading from JSON
+        // ============================================================
+        // 🔧 CONFIGURACIÓN: Pega aquí tu URL de Google Apps Script
+        // ============================================================
+        const API_URL = '';
+        // Ejemplo: const API_URL = 'https://script.google.com/macros/s/AKfycb.../exec';
+        // ============================================================
+
+        // Guest loading — tries API first, falls back to local JSON
         async function init() {
             let inv = [];
-            try { inv = await (await fetch('invitados.json')).json(); } catch (e) { }
+
+            // 1) Try API first (live data from Google)
+            if (API_URL) {
+                try {
+                    const res = await fetch(API_URL + '?action=getGuests');
+                    const data = await res.json();
+                    if (data && Array.isArray(data) && data.length > 0) {
+                        inv = data;
+                    }
+                } catch (e) {
+                    console.log('API not available, using local file');
+                }
+            }
+
+            // 2) Fallback to local file
+            if (inv.length === 0) {
+                try { inv = await (await fetch('invitados.json')).json(); } catch (e) { }
+            }
+
             const id = new URLSearchParams(location.search).get('id');
             if (id && inv.length) {
                 const g = inv.find(x => x.id == id);
